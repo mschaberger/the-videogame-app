@@ -4,12 +4,15 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('genre', {
     id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
     },
     name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
+  }, {
+    timestamps: false,
   });
 };
