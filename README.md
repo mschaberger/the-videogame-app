@@ -72,10 +72,10 @@ __IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden ut
 
 ### Únicos Endpoints/Flags que pueden utilizar
 
-  - GET https://api.rawg.io/api/games
-  - GET https://api.rawg.io/api/games?search={game}
-  - GET https://api.rawg.io/api/genres
-  - GET https://api.rawg.io/api/games/{id}
+  - GET https://api.rawg.io/api/games?key={YOUR_API_KEY}
+  - GET https://api.rawg.io/api/games?search={game}?key={YOUR_API_KEY}
+  - GET https://api.rawg.io/api/genres?key={YOUR_API_KEY}
+  - GET https://api.rawg.io/api/games/{id}?key={YOUR_API_KEY}
 
 ### Requerimientos mínimos:
 
