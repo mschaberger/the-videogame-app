@@ -60,7 +60,7 @@ const getAllVideogames = async () => {
     const dataFromApi = await getfromApi();
     const dataFromDb = await getFromDb();
     const allData = dataFromDb.concat(dataFromApi);
-    return allData;
+    return allData.sort();
 };
 
 //Tomo el name de la query, si me lo pasan por query lo comparo con todos mis datos (de la BD+API),
