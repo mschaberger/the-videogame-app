@@ -5,37 +5,37 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('videogame', {
     id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false,
-      primaryKey: true,
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
+        primaryKey: true,
     },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     description: {
-      type: DataTypes.TEXT,
-      allowNull: false,
+        type: DataTypes.TEXT,
+        allowNull: false,
     },
     released: {
-      type: DataTypes.STRING,
+        type: DataTypes.STRING,
     },
     image: {
-      type: DataTypes.STRING,
+        type: DataTypes.STRING,
     },
     rating: {
-      type: DataTypes.INTEGER,
+        type: DataTypes.INTEGER,
     },
     fromDb: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      defaultValue: true,
+        //los VG que guarde en DB van a tener esta propiedad para que sea mas facil encontrarlos
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
     },
     platforms: {
-      type: DataTypes.ARRAY(DataTypes.TEXT),
-      allowNull: false,
+        type: DataTypes.ARRAY(DataTypes.TEXT),
+        allowNull: false,
     }
   }, {
     timestamps: false,

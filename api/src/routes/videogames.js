@@ -2,6 +2,8 @@ const { Router } = require('express');
 const router = Router();
 const { Videogame, Genre, GameGenre } = require('../db');
 const axios = require('axios');
+const { YOUR_API_KEY } = process.env;
+
 
 //Traigo los datos de la API:
 const getfromApi = async () => {
@@ -9,7 +11,7 @@ const getfromApi = async () => {
         const arrVideogames = [];
         let apiUrl = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`;
   
-        for (let i = 0; i < 5; i++) { //traigo las primeras 5 paginas de la API, para limitar la cantidad a 100 VG
+        for (let i = 0; i < 6; i++) { //traigo las primeras 5 paginas de la API, para limitar la cantidad a 120 VG
             let pages = await axios.get(apiUrl);
             pages.data.results?.map((e) => {
                 arrVideogames.push({
@@ -33,22 +35,22 @@ const getfromApi = async () => {
 //Traigo los datos de la BD:
 const getFromDb = async () => {
     const infoDb = await Videogame.findAll({
-      include: {
-        model: Genre,
-      },
+        include: {
+            model: Genre,
+        },
     });
     const mapInfoDb = infoDb?.map((e) => {
-      return {
-        id: e.id,
-        name: e.name,
-        image: e.image,
-        genres: e.genres?.map((e) => e.name), 
-        description: e.description,
-        released: e.released,
-        rating: e.rating,
-        platforms: e.platforms?.map((el) => el), 
-        createdInDb: e.createdInDb,
-      };
+        return {
+            id: e.id,
+            name: e.name,
+            image: e.image,
+            genres: e.genres?.map((e) => e.name), 
+            description: e.description,
+            released: e.released,
+            rating: e.rating,
+            platforms: e.platforms?.map((el) => el), 
+            createdInDb: e.createdInDb,
+        };
     });
     return mapInfoDb;
 };
@@ -66,21 +68,25 @@ const getAllVideogames = async () => {
 //Si no me pasan el name por query, traigo todos los videojuegos:
 router.get("/", async (req, res, next) => {
     try {
-      const { name } = req.query;
-      const allVideogames = await getAllVideogames();
-      if (name) {
-        const containsName = allVideogames.filter((g) =>
-          g.name.toLowerCase().includes(name.toLowerCase())
-        );
-        const fifteen = containsName.slice(0, 14); 
-        containsName.length
-          ? res.json(fifteen)
-          : res.json({ error: `We couldn't find a videogame matching your search`});
-      } else {
-        res.json(allVideogames);
-      }
+        const { name } = req.query;
+        const allVideogames = await getAllVideogames();
+        if (name) {
+            const containsName = allVideogames.filter((g) =>
+                g.name.toLowerCase().includes(name.toLowerCase())
+            );
+            if (0 < containsName.length < 14) {
+                res.json(containsName)
+            } else if (containsName.length > 14) {
+                const fifteen = containsName.slice(0, 14); 
+                res.json(fifteen)
+            } else {
+                res.json({ error: `We couldn't find a videogame matching your search`});
+            }
+        } else {
+            res.json(allVideogames);
+        }
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
   });
 
