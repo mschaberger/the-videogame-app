@@ -1,0 +1,1 @@
+//cada VG Deberá mostrar su: Imagen - Nombre - Géneros
