@@ -11,7 +11,7 @@ const getfromApi = async () => {
         const arrVideogames = [];
         let apiUrl = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`;
   
-        for (let i = 0; i < 6; i++) { //traigo las primeras 5 paginas de la API, para limitar la cantidad a 120 VG
+        for (let i = 0; i < 6; i++) { //traigo las primeras 6 paginas de la API, para limitar la cantidad a 120 VG
             let pages = await axios.get(apiUrl);
             pages.data.results?.map((e) => {
                 arrVideogames.push({
@@ -60,7 +60,7 @@ const getAllVideogames = async () => {
     const dataFromApi = await getfromApi();
     const dataFromDb = await getFromDb();
     const allData = dataFromDb.concat(dataFromApi);
-    return allData.sort();
+    return allData;
 };
 
 //Tomo el name de la query, si me lo pasan por query lo comparo con todos mis datos (de la BD+API),
@@ -74,19 +74,16 @@ router.get("/", async (req, res, next) => {
             const containsName = allVideogames.filter((g) =>
                 g.name.toLowerCase().includes(name.toLowerCase())
             );
-            if (0 < containsName.length < 14) {
-                res.json(containsName)
-            } else if (containsName.length > 14) {
-                const fifteen = containsName.slice(0, 14); 
-                res.json(fifteen)
+            if (containsName.length) {
+                res.send(containsName);
             } else {
-                res.json({ error: `We couldn't find a videogame matching your search`});
+                res.send({ error: `We couldn't find a videogame matching your search`});
             }
         } else {
-            res.json(allVideogames);
+            res.send(allVideogames);
         }
     } catch (error) {
-        console.log(error);
+        next(error);
     }
   });
 

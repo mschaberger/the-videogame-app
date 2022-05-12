@@ -3,7 +3,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getVideogame } from '../actions';
+import { getVideogame } from '../Redux/actions/index.js';
 
 export default function SearchBar({onSearch}) {
     const dispatch = useDispatch();

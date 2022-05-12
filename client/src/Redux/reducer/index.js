@@ -1,5 +1,3 @@
-
-
 //siempre se define un estado inicial:
 const initialState = {
     videogames: [],
@@ -7,6 +5,8 @@ const initialState = {
     genres: [],
     detail: [],
     nameUser: [],
+    platforms: [],
+    loading: false
 };
 
 //se crea una funcion reducer con un switch para recorrer todas las actions hasta que encuentra la solicitada y la ejecuta
@@ -14,15 +14,23 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         
         case "GET_VIDEOGAMES":
+            let platforms = [];
+            action.payload.forEach((game) => {
+                platforms = [...platforms, ...game.platforms]
+            });
             return {
                 ...state,
+                videogames: action.payload,
                 allVideogames: action.payload,
+                platforms: Array.from(new Set(platforms)),
+                loading: false,
             };
 
         case "GET_NAME_VIDEOGAMES":
             return {
                 ...state,
                 videogames: action.payload,
+                loading: true
             };
       
         case "GET_GENRES":
@@ -127,6 +135,12 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 nameUser: action.payload,
+            };
+        
+        case "LOADING":
+            return {
+                ...state,
+                loading: action.payload,
             };
 
         default:

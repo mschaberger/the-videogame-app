@@ -4,54 +4,56 @@
 import axios from "axios";
 
 export function getAllVideogames() {
-    return async function(dispatch) {
-        return await fetch(`http://localhost:3001/videogames`)
-            .then(response => response.json())
-            .then(data => {
-                dispatch({ 
-                    type: "GET_ALL_VIDEOGAMES", 
-                    payload: data 
-                });
-            });
-    };
+    return async function (dispatch) {
+        const json = await axios.get("http://localhost:3001/videogames");
+        return dispatch({
+            type: "GET_ALL_VIDEOGAMES", 
+            payload: json.data 
+        })
+    }    
 }
 
 export function getVideogame(game) {
     return async function(dispatch) {
-        await fetch(`http://localhost:3001/videogames?search=${game}`)
-        .then(response => response.json())
-        .then(data => {
-            dispatch({ 
-                type: "GET_VIDEOGAME", 
-                payload: data 
+        try {
+            var json = await axios.get(`http://localhost:3001/videogames?search=${game}`)
+            return dispatch({ 
+                    type: "GET_VIDEOGAME", 
+                    payload: json.data 
             });
+        } catch (error) {
+            console.log(error);
+            return dispatch({ 
+                type: "GET_VIDEOGAME", 
+                payload: []
         });
+        }
     };
 }
 
 export function getVideogameDetail(id) {
-    return async function(dispatch) { 
-        await fetch (`http://localhost:3001/videogame/${id}`)
-        .then(response => response.json())
-        .then(data => {
+    return (dispatch) => { 
+        axios.get(`http://localhost:3001/videogame/${id}`)
+        .then((game) => { 
             dispatch({
                 type: "GET_VIDEOGAME_DETAIL", 
-                payload: data
+                payload: game.data
             });     
         })
+        .catch((error) => console.log(error));
     };
 }
   
 export function getGenres() {
-    return async function(dispatch) {
-        return await fetch ('http://localhost:3001/genres')
-        .then(response => response.json())
-        .then(data => {
+    return (dispatch) => {
+        axios.get('http://localhost:3001/genres')
+        .then((genres) => {
             dispatch({
                 type: "GET_GENRES",
-                payload: data
+                payload: genres.data
             })
         })
+        .catch((error) => console.log(error));
     };
 }
   
@@ -104,6 +106,13 @@ export function userName(user) {
 export function getClean() {
     return {
         type: "GET_CLEAN",
+    };
+};
+
+export function loading(payload) {
+    return {
+      type: "LOADING",
+      payload,
     };
 };
   

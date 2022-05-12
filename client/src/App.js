@@ -11,10 +11,10 @@ function App() {
         <BrowserRouter> 
             <div className="App">
                 <Routes>
-                    <Route exact path="/" element={<LandingPage />} />
-                    <Route exact path="/home" element={<Home />} />
-                    <Route exact path="/videogame" element={<CreateGame />} />
-                    <Route exact path="/home/:id" element={<GameDetail />} />
+                    <Route exact path="/" element = {<LandingPage />} />
+                    <Route exact path="/home" element = {<Home />} />
+                    <Route exact path="/videogame" element = {<CreateGame />} />
+                    <Route exact path="/home/:id" element = {<GameDetail />} />
                 </Routes>
             </div>
         </BrowserRouter>
