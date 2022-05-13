@@ -43,6 +43,12 @@ export function getVideogameDetail(id) {
         .catch((error) => console.log(error));
     };
 }
+
+export function cleanDetail() {
+    return {
+        type: "CLEAN_DETAIL",
+    };
+};
   
 export function getGenres() {
     return (dispatch) => {
@@ -103,11 +109,6 @@ export function userName(user) {
     };
 };
 
-export function getClean() {
-    return {
-        type: "GET_CLEAN",
-    };
-};
 
 export function loading(payload) {
     return {

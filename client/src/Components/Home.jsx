@@ -22,21 +22,17 @@ export default function Home() {
     const indexOfLastVideogame = currentPage * videogamesPerPage; //  current (2) * 15 (games per page) = 30. entonces el last index is 30.
     const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage; //   30 (result de arriba) - 15 (games per page) = 15
   
-    const currentVideogames = allVideogames.slice(
-      indexOfFirstVideogame,
-      indexOfLastVideogame
-    );
+    const currentVideogames = allVideogames.slice(indexOfFirstVideogame,indexOfLastVideogame);
   
     const paging = (pageN) => {
       setCurrentPage(pageN);
-      console.log(currentVideogames)
     };
 
-        useEffect(() => {
-        dispatch(loading(true))
-        dispatch(getAllVideogames());
+    useEffect(() => {
+        dispatch(loading(true));
         dispatch(getGenres());
-    }, [dispatch]) //vacio porque necesitamos que se ejecute cada vez que se monta
+        dispatch(getAllVideogames());
+    }, []) //vacio porque necesitamos que se ejecute cada vez que se monta
 
     //FILTROS Y ORDENADORES
     function handleFilterGenres(e) {

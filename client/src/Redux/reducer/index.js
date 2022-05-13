@@ -13,7 +13,7 @@ const initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         
-        case "GET_VIDEOGAMES":
+        case "GET_ALL_VIDEOGAMES":
             let platforms = [];
             action.payload.forEach((game) => {
                 platforms = [...platforms, ...game.platforms]
@@ -26,11 +26,23 @@ function reducer(state = initialState, action) {
                 loading: false,
             };
 
-        case "GET_NAME_VIDEOGAMES":
+        case "GET_VIDEOGAME":
             return {
                 ...state,
                 videogames: action.payload,
                 loading: true
+            };
+
+        case "GET_VIDEOGAME_DETAIL":
+            return {
+                ...state,
+                detail: action.payload,
+            }; 
+        
+        case "CLEAN_DETAIL":
+            return {
+                ...state,
+                detail: [],
             };
       
         case "GET_GENRES":
@@ -44,18 +56,6 @@ function reducer(state = initialState, action) {
               ...state,
             };
       
-        case "GET_DETAIL":
-            return {
-              ...state,
-              detail: action.payload,
-            };
-
-        case "GET_CLEAN":
-            return {
-                ...state,
-                detail: [],
-            };
-
         case "FILTER_BY_GENRES":
             const allVideogames = state.allVideogames;
             const genresFiltered =
@@ -146,7 +146,7 @@ function reducer(state = initialState, action) {
         default:
             return state;
     }
-}
+};
 
 
 export default reducer;
