@@ -1,0 +1,16 @@
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(224, 21, 21, 0.539);
+}
+
+.detailGame {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.infoGame {
+    display: flex;
+    flex-direction: column;
+}

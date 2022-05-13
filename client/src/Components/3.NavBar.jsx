@@ -5,7 +5,7 @@ import { getAllVideogames, getGenres, filterByGenres, filterByDate, orderByName,
 import { Link } from 'react-router-dom';
 import SearchBar from './4.SearchBar.jsx';
 import '../CSS/3.navBar.css';
-import logo from '../CSS/favicon.ico';
+import logo from '../CSS/imagenes/gameovernegro.jpeg';
 
 
 export default function NavBar() {
