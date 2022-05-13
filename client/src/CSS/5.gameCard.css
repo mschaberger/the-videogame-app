@@ -1,0 +1,23 @@
+.card {
+    background-color: rgba(132, 237, 244, 0.642);
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: 400px;
+    height: 500px;
+    box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
+    border-radius: 25px;
+    margin: 20px 20px 20px 20px;
+    object-fit: contain;
+}
+
+.image {
+    width: 70%;
+    height: 70%;
+    border-radius: 25px
+}
+
+.game {
+    text-decoration: none;
+}

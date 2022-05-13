@@ -1,0 +1,38 @@
+.header{
+    padding: 20px;
+    background-color: linear-gradient( white 0%,red 100%);;
+    color:rgb(197, 197, 227);
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.logo{
+    font-weight: bolder;
+    color: white;
+}
+
+.sort-filter {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.filter {
+    margin: 20px;
+    border-radius: 3px;
+}
+
+.reset {
+    border-radius: 5px;
+    background-color: fuchsia;
+    padding: 10px;
+    margin: 20px;
+}

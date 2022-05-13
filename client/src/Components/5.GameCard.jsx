@@ -1,9 +1,10 @@
 //cada VG Deberá mostrar su: Imagen - Nombre - Géneros
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../CSS/gameCard.css';
+import '../CSS/5.gameCard.css';
 
 export default function GameCard({ name, image, genres, rating, id }) {
+    
     return(
         <div className='card'>
             <Link to= {`/home/${id}`} >

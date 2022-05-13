@@ -1,25 +1,25 @@
-//VA SOLO el Input para buscar videojuegos por nombre, se renderiza en el navbar
-
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getVideogame } from '../Redux/actions/index.js';
+import { getVideogame, getAllVideogames } from '../Redux/actions/index.js';
+import '../CSS/4.searchBar.css';
 
 export default function SearchBar({onSearch}) {
     const dispatch = useDispatch();
     const [game, setGame] = useState('');
 
+    useEffect(() => {
+        dispatch(getAllVideogames());
+    }, [dispatch]);
+
     function handleInputChange(e) {
         e.preventDefault();
         setGame(e.target.value);
-    }
-    function handleOnSubmit(e) {
-        e.preventDefault();
-        if (!game) {
-            return alert('Please insert a Videogame')
-        } else {
+        if (game.length > 1) {
             dispatch(getVideogame(game));
             setGame('')
+        } else {
+            dispatch(getAllVideogames());
         }
     }
 
@@ -28,16 +28,10 @@ export default function SearchBar({onSearch}) {
             <input
                 className='input'
                 type="text"
-                placeholder="Videogame..."
+                placeholder="Search a game..."
                 value={game}
                 onChange={e => handleInputChange(e)}
             />
-            <button
-                className = 'button'
-                type = 'submit'
-                onClick={(e) => handleOnSubmit(e)}>
-                SEARCH
-            </button>
         </div>
     );
 }

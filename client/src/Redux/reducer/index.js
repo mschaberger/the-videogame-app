@@ -80,55 +80,53 @@ function reducer(state = initialState, action) {
             };
     
         case "ORDER_BY_NAME":
-            const sortedArrName =
-                action.payload === "asc"
-                ? state.videogames.sort(function (a, b) {
-                    if (a.name.toLowerCase() > b.name.toLowerCase()) {
-                        return 1;
-                    }
-                    if (b.name.toLowerCase() > a.name.toLowerCase()) {
-                        return -1;
-                    }
-                    return 0;
-                    })
-                : state.videogames.sort(function (a, b) {
-                    if (a.name.toLowerCase() > b.name.toLowerCase()) {
-                        return -1;
-                    }
-                    if (b.name.toLowerCase() > a.name.toLowerCase()) {
-                        return 1;
-                    }
-                    return 0;
-                    });
-            return {
-                ...state,
-                videogames: sortedArrName,
+            if(action.payload === 'all') {
+                return {
+                    ...state,
+                    videogames: [...state.videogames],
+                    allVideogames: [...state.allVideogames]
+                }
+            }
+            if(action.payload === 'desc') {
+                return {
+                    ...state,
+                    videogames: [...state.videogames].sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1)),
+                }
+            }
+            else {
+                return {
+                    ...state,
+                    videogames: [...state.videogames].sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)),
+                }
             };
     
         case "ORDER_BY_RATING":
-            const sortedArrRating =
-                action.payload === "low"
-                ? state.videogames.sort(function (a, b) {
-                    if (a.rating > b.rating) {
-                        return 1;
-                    }
-                    if (b.rating > a.rating) {
-                        return -1;
-                    }
-                    return 0;
+            if(action.payload === 'all') {
+                return {
+                    ...state,
+                    videogames: [...state.videogames],
+                    allVideogames: [...state.allVideogames]
+                }
+            }
+            if (action.payload === "low") {
+                return {
+                    ...state,
+                    videogames: [...state.videogames].sort((a, b) => {
+                        if (a.rating > b.rating) return 1;
+                        if (b.rating > a.rating) return -1;
+                        else return 0;
                     })
-                : state.videogames.sort(function (a, b) {
-                    if (a.rating > b.rating) {
-                        return -1;
-                    }
-                    if (b.rating > a.rating) {
-                        return 1;
-                    }
-                    return 0;
-                    });
-            return {
-                ...state,
-                videogames: sortedArrRating,
+                }
+            }
+            else {
+                return {
+                    ...state,
+                    videogames: [...state.videogames].sort((a, b) => {
+                        if (a.rating > b.rating) return -1;
+                        if (b.rating > a.rating) return 1;
+                        else return 0;
+                    })
+                }
             };
             
         case "USER_NAME":

@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import LandingPage from './Components/LandingPage.jsx';
-import Home from './Components/Home.jsx';
-import CreateGame from './Components/CreateGame.jsx';
-import GameDetail from './Components/GameDetail';
+import LandingPage from './Components/1.LandingPage.jsx';
+import Home from './Components/2.Home.jsx';
+import CreateGame from './Components/7.CreateGame.jsx';
+import GameDetail from './Components/8.GameDetail';
+
 //ACA VAN TODAS MIS RUTAS DEL FRONT
 
 function App() {
