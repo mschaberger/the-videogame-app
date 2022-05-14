@@ -1,16 +1,38 @@
 .detailContainer {
     display: flex;
     flex-direction: column;
-    background-color: rgba(224, 21, 21, 0.539);
+    background-color: rgba(2, 1, 1, 0.697);
+    justify-content: center;
+    align-items: center;
+    border: 10px;
+}
+
+.home{
+    border-radius: 5px;
+    background-color: black;
+    color: rgb(0, 255, 162);
+    padding: 10px;
+    margin: 20px;
+    margin-left: 50px;
+    box-shadow: 10px 10px 20px 5px rgb(0, 255, 162);
+}
+
+.home:hover {
+    box-shadow: 10px 10px 20px 5px black;
+    background-color: rgb(0, 255, 162);
+    color: black;
+    font-weight: bolder;
 }
 
 .detailGame {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: white;
 }
 
 .infoGame {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }

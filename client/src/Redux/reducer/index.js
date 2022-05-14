@@ -71,8 +71,8 @@ function reducer(state = initialState, action) {
             const allVideogames2 = state.allVideogames;
             const createdFilter =
                 action.payload === "created"
-                ? allVideogames2.filter((el) => el.createdInDb === true)
-                : allVideogames2.filter((el) => el.createdInDb !== true);
+                ? allVideogames2.filter((el) => el.fromDb === true)
+                : allVideogames2.filter((el) => el.fromDb !== true);
             return {
                 ...state,
                 videogames:

@@ -1,4 +1,6 @@
 .container {
+    background-image: url('../CSS/imagenes/fondovideogame2.png');
+    background-size: contain;
     margin: 10px;
     padding: 10px;
     flex-wrap: wrap;

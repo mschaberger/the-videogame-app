@@ -12,7 +12,7 @@ export default function NavBar() {
     const dispatch = useDispatch();
     const genres = useSelector((state) => state.genres);
 
-
+    //Pido todos los juegos y generos:
     useEffect(() => {
         dispatch(getAllVideogames());
         dispatch(getGenres());
@@ -35,10 +35,10 @@ export default function NavBar() {
         e.preventDefault();
         dispatch(orderByRating(e.target.value));
     }
-    //para volver al inicio y sacar los filtros/orden
-    function handleClick(e) {
-        e.preventDefault();
-        dispatch(getAllVideogames);
+
+    //Para resetear los filtros/orden
+    function handleRefresh(e) {
+        window.location.reaload();
     }
 
 
@@ -53,7 +53,7 @@ export default function NavBar() {
                 <SearchBar/>
 
                 <Link to = '/videogame'>
-                    <button>Create your videogame</button>
+                    <button className='createVG'>Create your videogame</button>
                 </Link>
             </nav>
 
@@ -84,9 +84,7 @@ export default function NavBar() {
                     <option className='options' value='low'> Low - High </option>
                 </select>
 
-                <button className= 'reset' onClick={(e) => {handleClick(e)}}>
-                    RESET
-                </button>
+                <button className= 'reset' onClick={(e) => {handleRefresh(e)}}> RESET </button>
             </div>
 
         </header>

@@ -11,7 +11,7 @@ const getfromApi = async () => {
         const arrVideogames = [];
         let apiUrl = `https://api.rawg.io/api/games?key=${YOUR_API_KEY}`;
   
-        for (let i = 0; i < 6; i++) { //traigo las primeras 6 paginas de la API, para limitar la cantidad a 120 VG
+        for (let i = 0; i < 5; i++) { //traigo las primeras 6 paginas de la API, para limitar la cantidad a 100 VG
             let pages = await axios.get(apiUrl);
             pages.data.results?.map((e) => {
                 arrVideogames.push({
@@ -49,7 +49,7 @@ const getFromDb = async () => {
             released: e.released,
             rating: e.rating,
             platforms: e.platforms?.map((el) => el), 
-            createdInDb: e.createdInDb,
+            fromDb: e.fromDb,
         };
     });
     return mapInfoDb;

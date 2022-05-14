@@ -102,15 +102,17 @@ export default function VideogameCreate() {
   return (
     <div className="fondo">
         <div className="contenedorCreate">
-            <h1 className="tituloCreate"> LET`SCREATE YOUR GAME! </h1>
 
-            <div>
-                <Link to="/home">
-                    <button className="botonHome"> HOME </button>
-                </Link>
+            <div className="top">
+                <h1 className="tituloCreate"> LET`SCREATE YOUR GAME! </h1>
+                <div>
+                    <Link to="/home">
+                        <button className="botonHome"> HOME </button>
+                    </Link>
+                </div>
             </div>
 
-            <form id="formulario" onSubmit={(e) => handleSubmit(e)}>
+            <form className="formulario" onSubmit={(e) => handleSubmit(e)}>
 
                 <div className="item">
                     <label className="label"> Name: </label>
@@ -160,7 +162,7 @@ export default function VideogameCreate() {
                     />
                 </div>
 
-                <div>
+                <div className="item">
                     <label className="label">Genres:</label>
                     <br></br>
                     <select className="input" defaultValue="Select" onChange={(e) => handleSelectGenres(e)} >

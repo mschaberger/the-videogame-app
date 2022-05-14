@@ -34,7 +34,7 @@ export default function GameDetail() {
                     <h3 className='released'> Released: { theVideogame.released }</h3>
                     <p className='description'> { theVideogame.description } </p>
                     <h3 className='rating'> Rating: { theVideogame.rating } </h3>
-                    <h3 className='genres'> Genres: { theVideogame.genres.map((genre) => genre.name).join(', ') } </h3>
+                    <h3 className='genres'> Genres: { theVideogame.genres } </h3>
                     <h3 className='platforms'> Platforms: { theVideogame.platforms }</h3>
                 </div>
                 <img className='image' src={ theVideogame.image } alt=''/>

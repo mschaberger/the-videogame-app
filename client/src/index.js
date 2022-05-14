@@ -6,8 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from './Redux/store/index.js';
 
+//le indicamos que queremos que renderice(APP) y en donde(en ROOT del html de public)
+//el provider lo conecta con el store de redux
+
+
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={store}> 
         <React.StrictMode>
             <App />
         </React.StrictMode>
