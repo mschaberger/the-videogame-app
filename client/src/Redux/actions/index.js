@@ -26,7 +26,7 @@ export function getVideogame(game) {
             return dispatch({ 
                 type: "GET_VIDEOGAME", 
                 payload: []
-        });
+            });
         }
     };
 }
@@ -102,18 +102,4 @@ export function orderByRating(option) {
     };
 }
 
-export function userName(user) {
-    return {
-        type: "USER_NAME",
-        payload: user,
-    };
-};
-
-
-export function loading(payload) {
-    return {
-      type: "LOADING",
-      payload,
-    };
-};
   

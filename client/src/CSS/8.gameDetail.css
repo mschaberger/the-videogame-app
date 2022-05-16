@@ -9,15 +9,28 @@
     border: 10px;
 }
 
+    .titleDetail {
+        display: flex;
+        flex-direction: row;
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    .game {
+        font-family: 'Press Start 2P', cursive;
+        padding: 10px;
+        font-size: 30px;
+        color: white;
+    }
+
     .home{
         border-radius: 5px;
         background-color: black;
         color: rgb(0, 255, 162);
         padding: 10px;
-        margin: 20px;
-        margin-left: 50px;
         box-shadow: 10px 10px 20px 5px rgb(0, 255, 162);
         font-family: 'Press Start 2P', cursive;
+        margin-right: -400px;
     }
 
     .home:hover {
@@ -32,26 +45,27 @@
         flex-direction: row;
         justify-content: space-between;
         color: white;
+        margin: 30px;
     }
 
         .infoGame {
             display: flex;
             flex-direction: column;
             justify-content: left;
+            margin: 20px;
         }
-            .game{
-                font-family: 'Press Start 2P', cursive;
-            }
 
             .description {
                 text-align: justify;
-                margin: 20px;
+                margin: 5px;
             }
 
-        .image {
-            height: 50%;
-            width: 50%;
-            margin: 10px;
+        .imageDetail {
+            align-self: center;
+            height: 45%;
+            width: 45%;
+            margin: 30px;
             border-style: double;
             border-color: black;
+            border-radius: 15px;
         }

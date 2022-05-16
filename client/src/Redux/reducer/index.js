@@ -4,9 +4,7 @@ const initialState = {
     allVideogames: [],
     genres: [],
     detail: [],
-    nameUser: [],
     platforms: [],
-    loading: false
 };
 
 //se crea una funcion reducer con un switch para recorrer todas las actions hasta que encuentra la solicitada y la ejecuta
@@ -23,14 +21,12 @@ function reducer(state = initialState, action) {
                 videogames: action.payload,
                 allVideogames: action.payload,
                 platforms: Array.from(new Set(platforms)),
-                loading: false,
             };
 
         case "GET_VIDEOGAME":
             return {
                 ...state,
                 videogames: action.payload,
-                loading: true
             };
 
         case "GET_VIDEOGAME_DETAIL":

@@ -68,16 +68,16 @@ const getAllVideogames = async () => {
 //Si no me pasan el name por query, traigo todos los videojuegos:
 router.get("/", async (req, res, next) => {
     try {
-        const { name } = req.query;
+        const { search } = req.query;
         const allVideogames = await getAllVideogames();
-        if (name) {
+        if (search) {
             const containsName = allVideogames.filter((g) =>
-                g.name.toLowerCase().includes(name.toLowerCase())
+                g.name.toLowerCase().includes(search.toLowerCase())
             );
             if (containsName.length) {
-                res.send(containsName);
+                return res.send(containsName);
             } else {
-                res.send({ error: `We couldn't find a videogame matching your search`});
+                return res.send({ error: `We couldn't find a videogame matching your search`});
             }
         } else {
             res.send(allVideogames);

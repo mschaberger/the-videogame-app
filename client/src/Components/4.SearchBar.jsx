@@ -1,16 +1,13 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getVideogame, getAllVideogames } from '../Redux/actions/index.js';
+import { getVideogame } from '../Redux/actions/index.js';
+import Loading from './9.Loading.jsx';
 import '../CSS/4.searchBar.css';
 
 export default function SearchBar({onSearch}) {
     const dispatch = useDispatch();
     const [game, setGame] = useState('');
-
-    useEffect(() => {
-      dispatch(getAllVideogames());
-    }, [dispatch]);
 
     function handleInputChange(e) {
         e.preventDefault();

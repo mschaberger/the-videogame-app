@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
 
 .card {
-    background-color: rgba(203, 218, 216, 0.445);
+    background-color: rgba(64, 58, 58, 0.657);
     text-align: center;
     align-items: center;
     display: flex;
@@ -16,11 +16,19 @@
     padding: 10px;
 }
 
-.image {
-    border-radius: 25px
+.card:hover {
+    background-color: rgba(111, 103, 103, 0.667);
 }
 
-.game {
+.image {
+    border-radius: 25px;
+    align-self: center;
+    height: 50%;
+    width: 50%;
+    margin: 30px;
+}
+
+.gameCard {
     font-family: 'Press Start 2P', cursive;
     color: white;
     font-size: 15px;

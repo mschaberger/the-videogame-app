@@ -13,7 +13,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
             .tituloCreate {
@@ -27,7 +27,7 @@
                 background-color: black;
                 color: turquoise;
                 padding: 10px;
-                margin-right: -40px;
+                margin-right: -10px;
                 margin-top: 20px;
                 box-shadow: 10px 10px 20px 5px turquoise;
                 font-family: 'Press Start 2P', cursive;
@@ -43,29 +43,34 @@
 
     .formulario{
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        margin: 20px;
     }
 
         .item {
             color: white;
             font-weight: bold;
             flex-direction: row;
-            justify-content: space-between;
+            margin: 30px;
+            justify-items: left;
         }
 
         .label {
             font-weight: bold;
-            margin-left: 20px;
+            font-size: 18px;
         }
 
-        .input {
-            margin-right: 20px;
-            border-radius: 3px;
+        .inputCreate {
+            margin-left: 20px;
+            border-radius: 5px;
             border-width: 3px;
-            border-color: rgba(64, 224, 208, 0.285);
-            background: transparent;
-            color: turquoise;
+            border-color: rgba(64, 224, 208, 0.395);
+            background-color: rgba(64, 224, 208, 0.256);
+            color: white;
+            padding: 5px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
         }
 
         .buttonDelete {
@@ -73,6 +78,8 @@
             border-color: fuchsia;
             color: fuchsia;
             font-weight: bolder;
+            border-radius: 5px;
+            border: none;
         }
 
         .buttonDelete:hover {
@@ -90,6 +97,7 @@
             box-shadow: 10px 10px 20px 5px fuchsia;
             font-family: 'Press Start 2P', cursive;
             border: none;
+            margin: 30px;
         }
 
         .botonCreateVideogame:hover {

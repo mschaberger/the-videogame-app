@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import NavBar from './3.NavBar.jsx';
 import GameCard from './5.GameCard.jsx'
 import Pages from './6.Pages.jsx';
+import Loading from './9.Loading.jsx';
 import '../CSS/2.home.css';
 
 export default function Home() {
@@ -31,7 +32,10 @@ export default function Home() {
         return (
             <div>
                 <div className="card_contenedor">
-                    {currentVideogames.map((e) => {
+                    {currentVideogames.length === 0 && currentVideogames ? (
+                        <Loading />
+                    ) : (
+                    currentVideogames.map((e) => {
                     return (
                         <div key={e.id}>
                             <Link to={"/home/" + e.id}>
@@ -44,7 +48,7 @@ export default function Home() {
                             </Link>
                         </div>
                     );
-                    })}
+                    }))}
                 </div>
                     
                 <Pages

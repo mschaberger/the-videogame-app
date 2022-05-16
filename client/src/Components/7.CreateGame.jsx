@@ -117,7 +117,7 @@ export default function CreateGame() {
                 <div className="item">
                     <label className="label"> Name: </label>
                     <input
-                        className="input"
+                        className="inputCreate"
                         type="text"
                         value={input.name}
                         name="name"
@@ -128,7 +128,7 @@ export default function CreateGame() {
                 <div className="item">
                     <label className="label">Released:</label>
                     <input
-                        className="input"
+                        className="inputCreate"
                         type="date"
                         value={input.released}
                         name="released"
@@ -139,7 +139,7 @@ export default function CreateGame() {
                 <div className="item">
                     <label className="label">Rating:</label>
                     <input
-                        className="input"
+                        className="inputCreate"
                         type="number"
                         value={input.rating}
                         name="rating"
@@ -150,7 +150,7 @@ export default function CreateGame() {
                 <div className="item">
                     <label className="label">Image:</label>
                     <input
-                        className="input"
+                        className="inputCreate"
                         type="text"
                         value={input.image}
                         name="image"
@@ -160,7 +160,7 @@ export default function CreateGame() {
 
                 <div className="item">
                     <label className="label">Genres:</label>
-                    <select className="input" defaultValue="Select" onChange={(e) => handleSelectGenres(e)} >
+                    <select className="inputCreate" defaultValue="Select" onChange={(e) => handleSelectGenres(e)} >
                         <option disabled>Select</option>
                         {genres?.map((e) => (<option className="select" value={e.name} key={e.id}> {e.name} </option>))}
                     </select>
@@ -179,7 +179,7 @@ export default function CreateGame() {
 
                 <div className="item">
                     <label className="label">Platforms:</label>
-                    <select className="input" defaultValue="Select" onChange={(e) => handleSelectPlatforms(e)} >
+                    <select className="inputCreate" defaultValue="Select" onChange={(e) => handleSelectPlatforms(e)} >
                         <option disabled>Select</option>
                         {platforms?.map((e) => (<option className="select" value={e} key={e}> {e} </option>))}
                     </select>
@@ -199,7 +199,7 @@ export default function CreateGame() {
                 <div className="item">
                     <label className="label">Description: </label>
                     <input
-                        className="input"
+                        className="inputCreate"
                         type="text"
                         value={input.description}
                         name="description"
