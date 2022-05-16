@@ -1,9 +1,16 @@
 .container {
-    background-image: url('../CSS/imagenes/fondovideogame2.png');
+    background-color: rgba(7, 32, 81, 0.631);
     background-size: contain;
-    margin: 10px;
+    margin: 20x;
     padding: 10px;
     flex-wrap: wrap;
+}
+
+.navBar{
+    padding: 20px;
+    border-bottom: #ffffff;
+    border-bottom-width: 10px;
+    background-color: rgba(7, 32, 81, 0.733);
 }
 
 .card_contenedor {

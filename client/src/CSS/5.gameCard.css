@@ -1,23 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
+
 .card {
-    background-color: rgba(132, 237, 244, 0.642);
+    background-color: rgba(203, 218, 216, 0.445);
     text-align: center;
+    align-items: center;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    width: 400px;
-    height: 500px;
-    box-shadow: 10px 10px 20px 5px rgb(0, 0, 0);
+    width: 300px;
+    height: 400px;
+    box-shadow: 5px 5px 10px 5px rgba(255, 255, 255, 0.595);
     border-radius: 25px;
-    margin: 20px 20px 20px 20px;
+    margin: 30px;
     object-fit: contain;
+    padding: 10px;
 }
 
 .image {
-    width: 70%;
-    height: 70%;
     border-radius: 25px
 }
 
 .game {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 10px;
+    margin-top: 10px;
+}
+
+.data {
+    color: white;
     text-decoration: none;
 }

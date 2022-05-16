@@ -5,7 +5,7 @@ import { postVideogame, getGenres, getAllVideogames } from "../Redux/actions/ind
 import { Link } from "react-router-dom";
 import "../CSS/7.createGame.css";
 
-export default function VideogameCreate() {
+export default function CreateGame() {
     const dispatch = useDispatch();
     const genres = useSelector((state) => state.genres);
     const videogames = useSelector((state) => state.videogames);
@@ -65,7 +65,7 @@ export default function VideogameCreate() {
         } 
         else {
             dispatch(postVideogame(input));
-            alert("CONGRATS! You created a new game!");
+            alert("CONGRATULATIONS! You created a new game!");
             setInput({ //setea todo en cero de nuevo:
                 name: "",
                 image: "",
@@ -104,7 +104,7 @@ export default function VideogameCreate() {
         <div className="contenedorCreate">
 
             <div className="top">
-                <h1 className="tituloCreate"> LET`SCREATE YOUR GAME! </h1>
+                <h1 className="tituloCreate"> LET`S CREATE YOUR GAME! </h1>
                 <div>
                     <Link to="/home">
                         <button className="botonHome"> HOME </button>
@@ -112,11 +112,10 @@ export default function VideogameCreate() {
                 </div>
             </div>
 
-            <form className="formulario" onSubmit={(e) => handleSubmit(e)}>
+            <form id="formulario" className="formulario" onSubmit={(e) => handleSubmit(e)}>
 
                 <div className="item">
                     <label className="label"> Name: </label>
-                    <br></br>
                     <input
                         className="input"
                         type="text"
@@ -128,7 +127,6 @@ export default function VideogameCreate() {
 
                 <div className="item">
                     <label className="label">Released:</label>
-                    <br></br>
                     <input
                         className="input"
                         type="date"
@@ -140,7 +138,6 @@ export default function VideogameCreate() {
 
                 <div className="item">
                     <label className="label">Rating:</label>
-                    <br></br>
                     <input
                         className="input"
                         type="number"
@@ -152,7 +149,6 @@ export default function VideogameCreate() {
 
                 <div className="item">
                     <label className="label">Image:</label>
-                    <br></br>
                     <input
                         className="input"
                         type="text"
@@ -164,7 +160,6 @@ export default function VideogameCreate() {
 
                 <div className="item">
                     <label className="label">Genres:</label>
-                    <br></br>
                     <select className="input" defaultValue="Select" onChange={(e) => handleSelectGenres(e)} >
                         <option disabled>Select</option>
                         {genres?.map((e) => (<option className="select" value={e.name} key={e.id}> {e.name} </option>))}
@@ -175,7 +170,7 @@ export default function VideogameCreate() {
                             {input.genres.map((e) => (
                                 <div className="divGP" key={e}>
                                     {e + " "}
-                                    <button type="button" onClick={() => handleDeleteGenres(e)}> X </button>
+                                    <button className='buttonDelete' type="button" onClick={() => handleDeleteGenres(e)}> X </button>
                                 </div>
                             ))}
                         </li>
@@ -184,7 +179,6 @@ export default function VideogameCreate() {
 
                 <div className="item">
                     <label className="label">Platforms:</label>
-                    <br></br>
                     <select className="input" defaultValue="Select" onChange={(e) => handleSelectPlatforms(e)} >
                         <option disabled>Select</option>
                         {platforms?.map((e) => (<option className="select" value={e} key={e}> {e} </option>))}
@@ -195,7 +189,7 @@ export default function VideogameCreate() {
                             <li key={e} className="listaGP">
                                 <div className="divGP">
                                     {e + " "}
-                                    <button type="button" onClick={() => handleDeletePlatforms(e)}> X </button>
+                                    <button className='buttonDelete' type="button" onClick={() => handleDeletePlatforms(e)}> X </button>
                                 </div>
                             </li>
                         ))}
@@ -204,7 +198,6 @@ export default function VideogameCreate() {
 
                 <div className="item">
                     <label className="label">Description: </label>
-                    <br></br>
                     <input
                         className="input"
                         type="text"

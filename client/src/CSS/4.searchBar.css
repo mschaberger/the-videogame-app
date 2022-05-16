@@ -2,15 +2,32 @@
     height: 30px;
     width: 300px;
     border-radius: 5px;
-    background-color: rgb(202, 190, 227);
+    background: transparent;
     font-size: 18px;
     cursor: pointer;
-    outline: none;
-    align-items: center;
-    justify-content: center;
+    border-color: turquoise;
+    text-align: center;
+    margin: 20px;
+    margin-left: 70px;
 }
   
 .input:hover {
-    background-color: rgb(129, 174, 196);
+    background-color: rgba(64, 224, 208, 0.256);
+}
+
+.buttonSearch {
+    padding: 5px;
+    color: turquoise;
+    font-weight: bold;
+    background: transparent;
+    border-color: turquoise;
+    border-radius: 5px;
+}
+
+.buttonSearch:hover {
+    background-color: rgba(64, 224, 208, 0.669);
+    color: white;
+    font-weight: bold;
+    border-color: white;
 }
   

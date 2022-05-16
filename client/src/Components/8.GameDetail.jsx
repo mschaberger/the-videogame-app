@@ -16,7 +16,7 @@ export default function GameDetail() {
     useEffect(() => {
         dispatch(getVideogameDetail(id));
         return function () {
-        dispatch(cleanDetail());
+            dispatch(cleanDetail());
         };
     }, [dispatch, id]);
 
@@ -30,11 +30,14 @@ export default function GameDetail() {
 
             <div className="detailGame">
                 <div className="infoGame">
-                    <h2 className='game'> { theVideogame.name } </h2>
+                    <h2 className='game'> { theVideogame.name } </h2> 
                     <h3 className='released'> Released: { theVideogame.released }</h3>
+                    <br></br>
                     <p className='description'> { theVideogame.description } </p>
+                    <br></br>
                     <h3 className='rating'> Rating: { theVideogame.rating } </h3>
-                    <h3 className='genres'> Genres: { theVideogame.genres } </h3>
+                    <h3 className='genres'> Genres: { theVideogame.genres?.map((g) => g.name).join(', ')} </h3>
+                    {console.log(theVideogame.genres)}
                     <h3 className='platforms'> Platforms: { theVideogame.platforms }</h3>
                 </div>
                 <img className='image' src={ theVideogame.image } alt=''/>

@@ -17,7 +17,7 @@ export default function Pages({ videogamesPerPage, allVideogames, paginado }) {
                     return (
                         <li className="pages" key={number}>
                             <button className='pageButton' onClick={() => paginado(number)} >
-                                {number}
+                                {number} 
                             </button>
                         </li>
                     )

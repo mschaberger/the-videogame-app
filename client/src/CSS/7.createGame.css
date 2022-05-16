@@ -1,45 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
+
 .fondo {
-    background-color: rgba(2, 1, 1, 0.697);;
+    background-color: rgba(49, 50, 5, 0.483);
 }
 
-.contenedorCreate{
-    display: flex;
-    flex-direction: column;
-}
+    .contenedorCreate{
+        display: flex;
+        flex-direction: column;
+    }
 
-.top{
-    flex-direction: row;
-    justify-content: center;
-}
+        .top{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
 
-.tituloCreate {
-    color: white;
-}
+            .tituloCreate {
+                color: white;
+                font-family: 'Press Start 2P', cursive;
+                margin-left: 18%;
+            }
 
-.formulario{
-    flex-direction: column;
-    justify-content: left;
-    align-items: center;
-}
+            .botonHome{
+                border-radius: 5px;
+                background-color: black;
+                color: turquoise;
+                padding: 10px;
+                margin-right: -40px;
+                margin-top: 20px;
+                box-shadow: 10px 10px 20px 5px turquoise;
+                font-family: 'Press Start 2P', cursive;
+                border: none;
+            }
+    
+            .botonHome:hover {
+                box-shadow: 10px 10px 20px 5px black;
+                background-color: turquoise;
+                color: black;
+                border: none;
+            }
 
-.botonHome{
-    border-radius: 5px;
-    background-color: black;
-    color: rgb(0, 255, 162);
-    padding: 10px;
-    margin: 20px;
-    margin-left: 20px;
-    box-shadow: 10px 10px 20px 5px rgb(0, 255, 162);
-}
+    .formulario{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
-.botonHome:hover {
-    box-shadow: 10px 10px 20px 5px black;
-    background-color: rgb(0, 255, 162);
-    color: black;
-    font-weight: bolder;
-}
+        .item {
+            color: white;
+            font-weight: bold;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
-.item {
-    color: white;
-    font-weight: bold;
-}
+        .label {
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .input {
+            margin-right: 20px;
+            border-radius: 3px;
+            border-width: 3px;
+            border-color: rgba(64, 224, 208, 0.285);
+            background: transparent;
+            color: turquoise;
+        }
+
+        .buttonDelete {
+            background: transparent;
+            border-color: fuchsia;
+            color: fuchsia;
+            font-weight: bolder;
+        }
+
+        .buttonDelete:hover {
+            background-color: fuchsia;
+            border-color: white;
+            color: white;
+        }
+
+        .botonCreateVideogame {
+            border-radius: 5px;
+            background-color: black;
+            color: fuchsia;
+            padding: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 20px 5px fuchsia;
+            font-family: 'Press Start 2P', cursive;
+            border: none;
+        }
+
+        .botonCreateVideogame:hover {
+            box-shadow: 10px 10px 20px 5px black;
+            background-color: fuchsia;
+            color: black;
+            border: none;
+        }

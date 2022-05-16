@@ -60,7 +60,9 @@ export default function Home() {
     return(
         <div className='container'>
 
-            <NavBar/>
+            <div className='navBar'>
+                <NavBar/>
+            </div>
 
             <div className='cardContainer'>
                 {videogames.length > 0 ? showCards(videogames) : showCards(allVideogames)}

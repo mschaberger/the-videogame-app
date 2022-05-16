@@ -9,17 +9,21 @@ export default function SearchBar({onSearch}) {
     const [game, setGame] = useState('');
 
     useEffect(() => {
-        dispatch(getAllVideogames());
+      dispatch(getAllVideogames());
     }, [dispatch]);
 
     function handleInputChange(e) {
         e.preventDefault();
         setGame(e.target.value);
-        if (game.length > 1) {
-            dispatch(getVideogame(game));
-            setGame('')
+    }
+    
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (!game.trim()) {
+            return alert("Please insert a videogame name");
         } else {
-            dispatch(getAllVideogames());
+            dispatch(getVideogame(game));
+            setGame("");
         }
     }
 
@@ -28,10 +32,17 @@ export default function SearchBar({onSearch}) {
             <input
                 className='input'
                 type="text"
+                id = 'search'
                 placeholder="Search a game..."
                 value={game}
-                onChange={e => handleInputChange(e)}
+                onChange = {e => handleInputChange(e)}
             />
+
+            <button
+            className='buttonSearch'
+            type='submit'
+            onClick = {e => handleSubmit(e)}
+            > Search </button>
         </div>
     );
 }

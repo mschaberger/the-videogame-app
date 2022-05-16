@@ -16,27 +16,9 @@ const { YOUR_API_KEY } = process.env;
 router.get('/:id', async (req, res, next) => {
     const pK = req.params.id;
     let gameDetail;
-    if (0 < pK.length < 15) {
+    if (pK.includes('-')) {
         try {
-            const apiSearch = await axios.get(`https://api.rawg.io/api/games/${pK}?key=${YOUR_API_KEY}`);
-            const game = apiSearch.data;
-            gameDetail = {
-                id: game.id,
-                name: game.name,
-                description: game.description_raw,
-                image: game.background_image,
-                rating: game.rating,
-                released: game.released,
-                genres: game.genres.map((g) => g.name).join(', '),
-                platforms: game.platforms.map((p) => p.platform.name).join(', '),
-            }
-        } catch (error) {
-            next(error);
-        }
-    }
-    else{
-        try {
-            //que busque un juego en la BD donde id = pK, y que incluya el atributo name del modelo Genre.
+        //que busque un juego en la BD donde id = pK, y que incluya el atributo name del modelo Genre.
             gameDetail = await Videogame.findOne({
                 where: {
                     id: pK,
@@ -50,9 +32,29 @@ router.get('/:id', async (req, res, next) => {
             next(error);
         }
     }
-    gameDetail
-        ? res.json(gameDetail)
-        : res.status(404).send({message: 'Game not found'});
+    else {
+        try {
+            const apiSearch = await axios.get(`https://api.rawg.io/api/games/${pK}?key=${YOUR_API_KEY}`);
+            const game = apiSearch.data;
+            gameDetail = {
+                id: game.id,
+                name: game.name,
+                description: game.description_raw,
+                image: game.background_image,
+                rating: game.rating,
+                released: game.released,
+                genres: game.genres,
+                platforms: game.platforms.map((p) => p.platform.name).join(', '),
+            }
+        } catch (error) {
+            next(error);
+        }
+    }
+    if (gameDetail) {
+        res.json(gameDetail);
+    } else {
+        res.status(404).send({message: 'Game not found'});
+    }
 });
 
 
@@ -90,24 +92,24 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-router.delete('/:id', async (req, res, next) => {
-    const pK = req.params.id;
-    const findGamebyId = await Videogame.findByPk(pK);
-
-    try {
-        if(!findGamebyId) {
-            return res.status(404).send({message: 'Game not found'})
-        } 
-        else {
-            const gameDeleted = findGamebyId.destroy();
-            !gameDeleted 
-                ? res.status(404).send({message: 'The game was not deleted'})
-                : res.status(200).send({message: 'The game was successfully deleted'});
-        }
-    } catch (error) {
-        next(error);
-    }
-});
+//router.delete('/:id', async (req, res, next) => {
+//    const pK = req.params.id;
+//    const findGamebyId = await Videogame.findByPk(pK);
+//
+//    try {
+//        if(!findGamebyId) {
+//            return res.status(404).send({message: 'Game not found'})
+//        } 
+//        else {
+//            const gameDeleted = findGamebyId.destroy();
+//            !gameDeleted 
+//                ? res.status(404).send({message: 'The game was not deleted'})
+//                : res.status(200).send({message: 'The game was successfully deleted'});
+//        }
+//    } catch (error) {
+//        next(error);
+//    }
+//});
 
 
 module.exports = router;

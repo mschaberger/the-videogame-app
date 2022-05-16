@@ -63,7 +63,7 @@ const getAllVideogames = async () => {
     return allData;
 };
 
-//Tomo el name de la query, si me lo pasan por query lo comparo con todos mis datos (de la BD+API),
+//Tomo el name de la query si me lo pasan lo comparo con todos mis datos (de la BD+API),
 //devuelvo los primeros 15 VG que matchean con ese name.
 //Si no me pasan el name por query, traigo todos los videojuegos:
 router.get("/", async (req, res, next) => {

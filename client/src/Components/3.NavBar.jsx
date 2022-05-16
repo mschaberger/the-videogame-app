@@ -37,23 +37,23 @@ export default function NavBar() {
     }
 
     //Para resetear los filtros/orden
-    function handleRefresh(e) {
-        window.location.reaload();
+    function handleRefresh() {
+        window.location.reload();
     }
 
 
     return (
-        <header  className='header'>
+        <header className='header'>
 
             <nav className='nav'>
-                <Link to= '/home'>
-                    <img src={logo} width="50" height="50"  alt="" />
+                <Link to= '/'>
+                    <img src={logo} width="80" height="80"  alt="" />
                 </Link>
 
                 <SearchBar/>
 
                 <Link to = '/videogame'>
-                    <button className='createVG'>Create your videogame</button>
+                    <button className='createVG'>CREATE YOUR<br></br>VIDEOGAME</button>
                 </Link>
             </nav>
 
