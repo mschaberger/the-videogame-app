@@ -100,10 +100,10 @@ export default function CreateGame() {
     }, [dispatch]);
 
   return (
-    <div className="fondo">
+    <div className="fondoCreate">
         <div className="contenedorCreate">
 
-            <div className="top">
+            <div className="headerCreate">
                 <h1 className="tituloCreate"> LET`S CREATE YOUR GAME! </h1>
                 <div>
                     <Link to="/home">

@@ -62,13 +62,13 @@ export default function Home() {
 
 
     return(
-        <div className='container'>
+        <div className='containerHome'>
 
-            <div className='navBar'>
+            <div className='navBarHome'>
                 <NavBar/>
             </div>
 
-            <div className='cardContainer'>
+            <div className='card_contenedor'>
                 {videogames.length > 0 ? showCards(videogames) : showCards(allVideogames)}
             </div>
 

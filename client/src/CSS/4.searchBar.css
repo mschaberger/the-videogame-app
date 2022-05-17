@@ -1,4 +1,4 @@
-.input {
+.inputSearch {
     height: 30px;
     width: 300px;
     border-radius: 5px;
@@ -11,7 +11,7 @@
     margin-left: 70px;
 }
   
-.input:hover {
+.inputSearch:hover {
     background-color: rgba(64, 224, 208, 0.256);
 }
 

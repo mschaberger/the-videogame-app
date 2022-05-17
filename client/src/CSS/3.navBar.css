@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
 
-.header{
+.headerNavbar{
     padding: 20px;
 }
 
@@ -11,28 +11,10 @@
     }
 
         .logo{
-            margin-left: 50px;
-            margin-top: 50px;
+            margin-left: 40px;
+            margin-top: 40px;
         }
-
-        .reset {
-            border-radius: 5px;
-            background-color: black;
-            color: turquoise;
-            padding: 15px;
-            box-shadow: 5px 5px 20px 5px turquoise;
-            border: none;
-            font-family: 'Press Start 2P', cursive;
-        }
-
-        .reset:hover {
-            box-shadow: 10px 10px 20px 5px black;
-            background-color: turquoise;
-            color: black;
-            font-weight: bolder;
-            border: none;
-        }
-
+         
         .createVG{
             color:#ffffff;
             padding: 15px;
@@ -66,5 +48,26 @@
             background: transparent;
             color: fuchsia;
             padding: 5px;
+        }
+            .options{
+                background-color: rgba(255, 0, 255, 0.297);
+                color: white;
+            }
+
+        .reset {
+            border-radius: 5px;
+            background-color: black;
+            color: turquoise;
+            padding: 15px;
+            box-shadow: 5px 5px 20px 5px turquoise;
+            border: none;
+            font-family: 'Press Start 2P', cursive;
+        }
+        .reset:hover {
+            box-shadow: 10px 10px 20px 5px black;
+            background-color: turquoise;
+            color: black;
+            font-weight: bolder;
+            border: none;
         }
 

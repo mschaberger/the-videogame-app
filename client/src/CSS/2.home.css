@@ -1,4 +1,4 @@
-.container {
+.containerHome {
     background-color: rgba(7, 32, 81, 0.631);
     background-size: contain;
     margin: 20x;
@@ -6,7 +6,7 @@
     flex-wrap: wrap;
 }
 
-.navBar{
+.navBarHome{
     padding: 20px;
     border-bottom: #ffffff;
     border-bottom-width: 10px;
@@ -19,5 +19,6 @@
     display:inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
+    text-decoration: none;
 }
 

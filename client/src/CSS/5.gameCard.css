@@ -1,43 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
 
-.card {
+.cardSingle {
     background-color: rgba(64, 58, 58, 0.657);
     text-align: center;
     align-items: center;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 300px;
-    height: 400px;
+    height: 345px;
     box-shadow: 5px 5px 10px 5px rgba(255, 255, 255, 0.595);
     border-radius: 25px;
-    margin: 30px;
-    object-fit: contain;
-    padding: 10px;
+    margin: 35px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
 }
 
-.card:hover {
+.cardSingle:hover {
     background-color: rgba(111, 103, 103, 0.667);
 }
 
-.image {
+.imageCard {
     border-radius: 25px;
     align-self: center;
-    height: 50%;
-    width: 50%;
-    margin: 30px;
+    height: 200px;
+    width: 300px;
 }
 
-.gameCard {
+.gameName {
     font-family: 'Press Start 2P', cursive;
-    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     font-size: 15px;
+    width: 90%;
+    height: 60px;
     text-decoration: none;
-    margin: 10px;
-    margin-top: 10px;
 }
 
-.data {
+.ratingCard{
+    display: flex;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+    text-decoration: none;
+}
+
+.dataContainer{
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.dataCard {
     color: white;
+    font-size: 12px;
+    list-style-type: none;
     text-decoration: none;
 }

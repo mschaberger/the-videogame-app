@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
 
-.fondo {
-    background-color: rgba(49, 50, 5, 0.483);
+.fondoCreate {
+    background-color: rgba(5, 25, 50, 0.518);
+    margin: 30px 100px 30px 100px;
 }
 
     .contenedorCreate{
@@ -9,11 +10,11 @@
         flex-direction: column;
     }
 
-        .top{
+        .headerCreate{
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
             .tituloCreate {
@@ -33,7 +34,6 @@
                 font-family: 'Press Start 2P', cursive;
                 border: none;
             }
-    
             .botonHome:hover {
                 box-shadow: 10px 10px 20px 5px black;
                 background-color: turquoise;
@@ -44,7 +44,8 @@
     .formulario{
         flex-direction: column;
         align-items: center;
-        margin: 20px;
+        margin: 10px;
+        justify-content: flex-start;
     }
 
         .item {
@@ -81,15 +82,15 @@
             border-radius: 5px;
             border: none;
         }
-
         .buttonDelete:hover {
             background-color: fuchsia;
-            border-color: white;
             color: white;
+            border: none;
         }
 
         .botonCreateVideogame {
             border-radius: 5px;
+            height: 40px;
             background-color: black;
             color: fuchsia;
             padding: 10px;
@@ -97,9 +98,7 @@
             box-shadow: 10px 10px 20px 5px fuchsia;
             font-family: 'Press Start 2P', cursive;
             border: none;
-            margin: 30px;
         }
-
         .botonCreateVideogame:hover {
             box-shadow: 10px 10px 20px 5px black;
             background-color: fuchsia;

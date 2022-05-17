@@ -43,11 +43,11 @@ export default function NavBar() {
 
 
     return (
-        <header className='header'>
+        <header className='headerNavbar'>
 
             <nav className='nav'>
                 <Link to= '/'>
-                    <img src={logo} width="80" height="80"  alt="" />
+                    <img src={logo} width="80" height="80"  alt="" className='logo'/>
                 </Link>
 
                 <SearchBar/>
