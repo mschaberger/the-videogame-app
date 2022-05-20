@@ -21,6 +21,8 @@ function reducer(state = initialState, action) {
                 videogames: action.payload,
                 allVideogames: action.payload,
                 platforms: Array.from(new Set(platforms)),
+                //El método Array.from() crea una nueva instancia de Array a partir de un objeto iterable. 
+                //El objeto Set permite almacenar valores únicos de cualquier tipo. Un valor en un Set sólo puede estar una vez.
             };
 
         case "GET_VIDEOGAME":
@@ -123,18 +125,6 @@ function reducer(state = initialState, action) {
                         else return 0;
                     })
                 }
-            };
-            
-        case "USER_NAME":
-            return {
-                ...state,
-                nameUser: action.payload,
-            };
-        
-        case "LOADING":
-            return {
-                ...state,
-                loading: action.payload,
             };
 
         default:

@@ -3,13 +3,19 @@
 //con promesas no necesito el async await:
 import axios from "axios";
 
+//SON TODAS ACTION CREATORS, las que hacen pedidos al back, son las que usan thunk.
+
 export function getAllVideogames() {
     return async function (dispatch) {
-        const json = await axios.get("http://localhost:3001/videogames");
-        return dispatch({
-            type: "GET_ALL_VIDEOGAMES", 
-            payload: json.data 
-        })
+        try {
+            const json = await axios.get("http://localhost:3001/videogames");
+            return dispatch({
+                type: "GET_ALL_VIDEOGAMES", 
+                payload: json.data 
+            })
+        } catch (error) {
+            console.log(error);
+        }
     }    
 }
 
@@ -31,6 +37,7 @@ export function getVideogame(game) {
     };
 }
 
+//PROMESAAAAAAA:
 export function getVideogameDetail(id) {
     return (dispatch) => { 
         axios.get(`http://localhost:3001/videogame/${id}`)
@@ -49,7 +56,8 @@ export function cleanDetail() {
         type: "CLEAN_DETAIL",
     };
 };
-  
+
+//PROMESAAAAA:
 export function getGenres() {
     return (dispatch) => {
         axios.get('http://localhost:3001/genres')

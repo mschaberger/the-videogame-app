@@ -30,7 +30,7 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
     },
     fromDb: {
-        //los VG que guarde en DB van a tener esta propiedad para que sea mas facil encontrarlos
+        //los VG que guarde en DB van a tener esta propiedad para que sea mas facil filtrarlos
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true,
@@ -40,6 +40,6 @@ module.exports = (sequelize) => {
         allowNull: false,
     }
   }, {
-    timestamps: false,
+    timestamps: false, //es para que no se creen las columnas de las fechas(creacion y de modificación);
   });
 };

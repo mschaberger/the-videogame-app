@@ -27,11 +27,11 @@
                 border-radius: 5px;
                 background-color: black;
                 color: turquoise;
+                cursor: pointer;
                 padding: 10px;
                 margin-right: -10px;
                 margin-top: 20px;
                 box-shadow: 10px 10px 20px 5px turquoise;
-                font-family: 'Press Start 2P', cursive;
                 border: none;
             }
             .botonHome:hover {
@@ -79,6 +79,7 @@
             border-color: fuchsia;
             color: fuchsia;
             font-weight: bolder;
+            cursor: pointer;
             border-radius: 5px;
             border: none;
         }
@@ -88,20 +89,42 @@
             border: none;
         }
 
-        .botonCreateVideogame {
-            border-radius: 5px;
-            height: 40px;
-            background-color: black;
-            color: fuchsia;
-            padding: 10px;
+        .button {
             margin: 20px;
-            box-shadow: 10px 10px 20px 5px fuchsia;
-            font-family: 'Press Start 2P', cursive;
+            background: transparent;
+            padding: 0;
             border: none;
-        }
-        .botonCreateVideogame:hover {
-            box-shadow: 10px 10px 20px 5px black;
-            background-color: fuchsia;
-            color: black;
-            border: none;
-        }
+          }
+          
+          .button {
+            --border-right: 6px;
+            --text-stroke-color: rgba(255,255,255,0.6);
+            --animation-color: #37FF8B;
+            --fs-size: 2em;
+            letter-spacing: 3px;
+            text-decoration: none;
+            font-size: var(--fs-size);
+            font-family: inherit;
+            position: relative;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--text-stroke-color);
+          }
+
+          .hover-text {
+            position: absolute;
+            box-sizing: border-box;
+            content: attr(data-text);
+            color: var(--animation-color);
+            width: 0%;
+            inset: 0;
+            border-right: var(--border-right) solid var(--animation-color);
+            overflow: hidden;
+            transition: 0.5s;
+            -webkit-text-stroke: 1px var(--animation-color);
+          }
+
+          .button:hover .hover-text {
+            width: 100%;
+            filter: drop-shadow(0 0 23px var(--animation-color))
+          }

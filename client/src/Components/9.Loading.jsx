@@ -1,12 +1,35 @@
 
 import React from "react";
-import loader from '../CSS/imagenes/loading.gif'
 import '../CSS/9.Loading.css';
  
+/*
 export default function Loading(){
     return(
-        <div className='loader'>
-            <img className="imagenLoading" src={ loader } width="100" height="100" alt="not tiene"/>
+        <div class="spinner">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
         </div>
     )
-}
+};
+*/
+
+export default class Loading extends React.Component{
+    render() {
+        return(
+            <div class="spinner">
+                <span>L</span>
+                <span>O</span>
+                <span>A</span>
+                <span>D</span>
+                <span>I</span>
+                <span>N</span>
+                <span>G</span>
+            </div>
+        )
+    }
+};

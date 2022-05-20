@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
-
 .detailContainer {
     display: flex;
     flex-direction: column;
@@ -21,7 +19,6 @@
     }
 
     .gameNameDetail {
-        font-family: 'Press Start 2P', cursive;
         font-size: 30px;
         color: white;
     }
@@ -36,6 +33,7 @@
         margin-top: 20px;
         position: fixed;
         margin-left: 100px;
+        cursor: pointer;
     }
 
     .homeDetailBtn:hover {

@@ -207,9 +207,10 @@ export default function CreateGame() {
                     />
                 </div>
 
-                <div>
-                    <button className="botonCreateVideogame" type="submit"> CREATE </button>
-                </div>
+                <button data-text="Awesome" class="button">
+                    <span class="actual-text">&nbsp;CREATE&nbsp;</span>
+                    <span class="hover-text" aria-hidden="true">&nbsp;CREATE&nbsp;</span>
+                </button>
 
             </form>
         </div>

@@ -13,12 +13,15 @@
     background-color: rgba(7, 32, 81, 0.733);
 }
 
+.noLink{
+    text-decoration: none;
+}
+
 .card_contenedor {
     align-items: center;
     justify-content: center;
-    display:inline-flex;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    text-decoration: none;
 }
 

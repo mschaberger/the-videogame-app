@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+//browserrouter es un enrutador, sirve para crear rutas en nuestra app. 
 import LandingPage from './Components/1.LandingPage.jsx';
 import Home from './Components/2.Home.jsx';
 import CreateGame from './Components/7.CreateGame.jsx';
