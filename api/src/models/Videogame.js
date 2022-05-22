@@ -24,7 +24,6 @@ module.exports = (sequelize) => {
     },
     image: {
         type: DataTypes.STRING,
-        defaultValue: "https://media.rawg.io/me…3cd07060c14e96612001.jpg",
     },
     rating: {
         type: DataTypes.INTEGER,

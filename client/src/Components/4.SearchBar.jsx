@@ -4,11 +4,78 @@ import { useDispatch } from 'react-redux';
 import { getVideogame } from '../Redux/actions/index.js';
 import { connect } from 'react-redux';
 import '../CSS/4.searchBar.css';
+import Loading from './9.Loading.jsx';
+
+export class SearchBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            game: ''
+        }
+    };
+
+    handleInputChange = (e) => {
+        e.preventDefault();
+        this.setState({
+            game: e.target.value
+        });
+    }
+    
+    handleSubmit = (e) => {
+        e.preventDefault();
+        if (!this.state.game.trim()) {
+            return alert("Please insert a videogame name");
+        } else {
+            this.props.getVideogame(this.state.game);
+            this.setState({
+                game: ''
+            })
+        }
+    };
+    
+    
+    render() {
+        const { game } = this.state;
+        return(
+            <div>
+                <input
+                    className='inputSearch'
+                    type="text"
+                    id = 'search'
+                    placeholder="Search a game..."                        
+                    value={game}
+                    onChange = {e => this.handleInputChange(e)}
+                    onSubmit = {e => this.handleSubmit(e)}
+                />
+                <button
+                    className='buttonSearch'
+                    type='submit'
+                    onClick = {e => this.handleSubmit(e)}
+                > Search </button>
+            </div>                    
+        )
+    }
+};
+
+export const mapStateToProps = (state) => {
+    return{
+        videogames: state.videogames
+    }
+};
+
+export const mapDispatchToProps = (dispatch) => {
+    return {
+        getVideogame: videogame => dispatch(getVideogame(videogame))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
 
 
-export default function SearchBar({onSearch}) {
-    const dispatch = useDispatch(); //-----------> LO REEMPLAZA EL MAPDISPATCHTOPROPS
-    const [game, setGame] = useState(''); //-----> LO REEMPLAZA THIS.STATE Y THIS.SETSTATE
+/*
+export default function SearchBar() {
+    const dispatch = useDispatch(); 
+    const [game, setGame] = useState(''); 
 
     function handleInputChange(e) {
         e.preventDefault();
@@ -34,6 +101,7 @@ export default function SearchBar({onSearch}) {
                 placeholder="Search a game..."
                 value={game}
                 onChange = {e => handleInputChange(e)}
+                onClick = {e => handleSubmit(e)}
             />
 
             <button
@@ -44,65 +112,7 @@ export default function SearchBar({onSearch}) {
         </div>
     );
 }
-
-/*
-export class SearchBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            game: ''
-        }
-    };
-
-    handleInputChange(e) {
-        e.preventDefault();
-        this.setState({
-            game: e.target.value
-        });
-    }
-    
-    handleSubmit(e) {
-        e.preventDefault();
-        if (!this.state.game.trim()) {
-            return alert("Please insert a videogame name");
-        } else {
-            this.props.getVideogame(this.state.game);
-            this.setState({
-                game: ''
-            })
-        }
-    };
-    
-    
-    render() {
-        const { game } = this.state;
-        return(
-            <div>
-                <input
-                    className='inputSearch'
-                    type="text"
-                    id = 'search'
-                    placeholder="Search a game..."
-                    value={game}
-                    onChange = {e => this.handleInputChange(e)}
-                />
-
-                <button
-                    className='buttonSearch'
-                    type='submit'
-                    onClick = {e => this.handleSubmit(e)}
-                > Search </button>
-            </div>
-        )
-    }
-}
-
-//REEMPLAZA AL USEDISPATCH:
-function mapDispatchToProps(dispatch) {
-    return {
-        getVideogame: videogame => dispatch(getVideogame(videogame))
-    }
-};
-
-export default connect(mapDispatchToProps)(SearchBar);
 */
+
+
+

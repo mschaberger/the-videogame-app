@@ -13,7 +13,10 @@ router.get("/", async (req, res, next) => {
         const genresAPI = await axios.get(`https://api.rawg.io/api/genres?key=${YOUR_API_KEY}`);
         genresAPI.data.results.forEach((p) => {
             Genre.findOrCreate({    //metodo de sequelize
-                where: { id: p.id, name: p.name },
+                where: { 
+                    id: p.id, 
+                    name: p.name 
+                },
             });
         });
         const genresDB = await Genre.findAll(); //metodo de sequelize trae los generos de la base de datos

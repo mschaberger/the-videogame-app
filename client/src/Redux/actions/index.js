@@ -17,7 +17,7 @@ export function getAllVideogames() {
             console.log(error);
         }
     }    
-}
+};
 
 export function getVideogame(game) {
     return async function(dispatch) {
@@ -35,7 +35,7 @@ export function getVideogame(game) {
             });
         }
     };
-}
+};
 
 //PROMESAAAAAAA:
 export function getVideogameDetail(id) {

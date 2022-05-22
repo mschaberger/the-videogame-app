@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postVideogame, getGenres, getAllVideogames } from "../Redux/actions/index.js";
 import { Link } from "react-router-dom";
+import defaultImage from '../CSS/imagenes/Nuevojuego.webp';
 import "../CSS/7.createGame.css";
 
 export default function CreateGame() {
@@ -62,7 +63,9 @@ export default function CreateGame() {
             return alert("Please select one or more genres for your game");
         } else if (input.platforms.length === 0) {
             return alert("Please select one or more platforms for your game");
-        } 
+        } else if (input.image.trim() === '') {
+            input.image = defaultImage
+        }
         else {
             dispatch(postVideogame(input));
             alert("CONGRATULATIONS! You created a new game!");

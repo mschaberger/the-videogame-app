@@ -21,7 +21,7 @@ function reducer(state = initialState, action) {
                 videogames: action.payload,
                 allVideogames: action.payload,
                 platforms: Array.from(new Set(platforms)),
-                //El método Array.from() crea una nueva instancia de Array a partir de un objeto iterable. 
+                //El método Array.from() crea un Array a partir del objeto Set(para que no se repitan) de las plataformas.  
                 //El objeto Set permite almacenar valores únicos de cualquier tipo. Un valor en un Set sólo puede estar una vez.
             };
 
@@ -111,7 +111,7 @@ function reducer(state = initialState, action) {
                     ...state,
                     videogames: [...state.videogames].sort((a, b) => {
                         if (a.rating > b.rating) return 1;
-                        if (b.rating > a.rating) return -1;
+                        if (a.rating < b.rating) return -1;
                         else return 0;
                     })
                 }
@@ -120,8 +120,8 @@ function reducer(state = initialState, action) {
                 return {
                     ...state,
                     videogames: [...state.videogames].sort((a, b) => {
+                        if (a.rating < b.rating) return 1;                       
                         if (a.rating > b.rating) return -1;
-                        if (b.rating > a.rating) return 1;
                         else return 0;
                     })
                 }
