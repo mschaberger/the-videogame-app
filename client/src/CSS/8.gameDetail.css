@@ -9,36 +9,41 @@
 .headerDetail{
     display: flex;
     flex-direction: row;
-    margin-top: 25px;
+    margin-top: 15px;
     color: white;
 }
     .titleDetail {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 10px;
     }
 
     .gameNameDetail {
-        font-size: 30px;
+        font-size: 50px;
         color: white;
+    }
+
+    .rating {
+        margin:0px
     }
 
     .homeDetailBtn{
         border-radius: 5px;
         background-color: black;
-        color: turquoise;
+        color: #37FF8B;
         padding: 10px;
-        box-shadow: 10px 10px 20px 5px turquoise;
-        font-family: 'Press Start 2P', cursive;
-        margin-top: 20px;
+        box-shadow: 5px 5px 10px 3px  #37FF8B;
+        font-family: inherit;
+        margin-top: 40px;
         position: fixed;
-        margin-left: 100px;
+        margin-left: 300px;
         cursor: pointer;
     }
 
     .homeDetailBtn:hover {
         box-shadow: 10px 10px 20px 5px black;
-        background-color: turquoise;
+        background-color: #37FF8B;
         color: black;
         font-weight: bolder;
     }

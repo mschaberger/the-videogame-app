@@ -1,7 +1,7 @@
 const { Videogame, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
-describe('- - - Videogame model - - -', () => {
+xdescribe('- - - Videogame model - - -', () => {
     before(() => conn.authenticate()
         .catch((err) => {
             console.error('Unable to connect to the database:', err);
@@ -128,7 +128,7 @@ describe('- - - Videogame model - - -', () => {
                     description: 'Great game',
                     released: '12/10/2020',
                     rating: 4,
-                    platfomrs: ['x-box', 'playstation 5', 'nintendo']
+                    platforms: ['x-box', 'playstation 5', 'nintendo']
                 })
                 .then(() => done())
                 .catch(() => done(new Error('It should create a new Videogame')));

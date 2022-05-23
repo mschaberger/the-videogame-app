@@ -12,7 +12,7 @@ export default function NavBar() {
     const dispatch = useDispatch();
     const genres = useSelector((state) => state.genres);
 
-    //Pido todos los juegos y generos:
+    //Pido todos los juegos y generos cuando se monta el componente:
     useEffect(() => {
         dispatch(getAllVideogames());
         dispatch(getGenres());
@@ -36,7 +36,7 @@ export default function NavBar() {
         dispatch(orderByRating(e.target.value));
     }
 
-    //Para resetear los filtros/orden
+    //Para resetear los filtros/ordenadores
     function handleRefresh() {
         window.location.reload();
     }

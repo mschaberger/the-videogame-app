@@ -2,7 +2,7 @@ import React from 'react';
 import '../CSS/6.pages.css';
 
 
-export default function Pages({ videogamesPerPage, allVideogames, paginado, handlePrev, handleNext }) {
+export default function Pages({ videogamesPerPage, allVideogames, paginado }) {
     
     const pageN = [];
     for (let i = 0; i < Math.ceil(allVideogames/videogamesPerPage); i++) {

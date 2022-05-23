@@ -1,10 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { getVideogame } from '../Redux/actions/index.js';
 import { connect } from 'react-redux';
 import '../CSS/4.searchBar.css';
-import Loading from './9.Loading.jsx';
+
 
 export class SearchBar extends React.Component {
     constructor(props) {
@@ -46,6 +44,7 @@ export class SearchBar extends React.Component {
                     value={game}
                     onChange = {e => this.handleInputChange(e)}
                     onSubmit = {e => this.handleSubmit(e)}
+                    on
                 />
                 <button
                     className='buttonSearch'

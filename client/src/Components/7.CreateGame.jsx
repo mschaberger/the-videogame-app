@@ -69,7 +69,7 @@ export default function CreateGame() {
         else {
             dispatch(postVideogame(input));
             alert("CONGRATULATIONS! You created a new game!");
-            setInput({ //setea todo en cero de nuevo:
+            setInput({ 
                 name: "",
                 image: "",
                 description: "",

@@ -30,7 +30,7 @@ export default function GameDetail() {
 
                 <div className="titleDetail">
                     <h2 className='gameNameDetail'> { theVideogame.name } </h2> 
-                    <h3 className='rating'> Rating: { theVideogame.rating } </h3>
+                    <h3 className='rating'> Rating: { theVideogame.rating } ☆ </h3>
                 </div>
 
                 <Link to= {`/home`} >

@@ -26,18 +26,18 @@
             .botonHome{
                 border-radius: 5px;
                 background-color: black;
-                color: turquoise;
+                color:  #37FF8B;
                 cursor: pointer;
                 padding: 10px;
                 margin-right: -10px;
                 margin-top: 20px;
-                box-shadow: 10px 10px 20px 5px turquoise;
+                box-shadow: 5px 5px 10px 3px  #37FF8B;
                 border: none;
                 font-family: inherit;
             }
             .botonHome:hover {
-                box-shadow: 10px 10px 20px 5px black;
-                background-color: turquoise;
+                box-shadow: 5px 5px 10px 5px black;
+                background-color:  #37FF8B;
                 color: black;
                 border: none;
             }
@@ -103,9 +103,9 @@
             padding: 0;
             border: none;
             font-family: 'Press Start 2P', cursive;
-          }
+        }
           
-          .button {
+        .button {
             --border-right: 6px;
             --text-stroke-color: rgba(255,255,255,0.6);
             --animation-color: #37FF8B;
@@ -118,9 +118,9 @@
             text-transform: uppercase;
             color: transparent;
             -webkit-text-stroke: 1px var(--text-stroke-color);
-          }
+        }
 
-          .hover-text {
+        .hover-text {
             position: absolute;
             box-sizing: border-box;
             content: attr(data-text);
@@ -131,9 +131,9 @@
             overflow: hidden;
             transition: 0.5s;
             -webkit-text-stroke: 1px var(--animation-color);
-          }
+        }
 
-          .button:hover .hover-text {
+        .button:hover .hover-text {
             width: 100%;
             filter: drop-shadow(0 0 23px var(--animation-color))
-          }
+        }

@@ -1,8 +1,7 @@
 .containerHome {
     background-color: rgba(7, 32, 81, 0.631);
     background-size: contain;
-    margin: 20x;
-    padding: 10px;
+    margin: 10px;
     flex-wrap: wrap;
 }
 

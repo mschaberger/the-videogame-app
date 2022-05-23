@@ -13,7 +13,7 @@ export default function Home() {
     const allVideogames = useSelector((state) => state.allVideogames); //trae del state todo lo que esta en el array videogames
     const videogames = useSelector((state) => state.videogames); //trae del state todo lo que esta en el array videogame
 
-
+    //Paginado, numeración y prev-next
     const [currentPage, setCurrentPage] = useState(1);
     const videogamesPerPage = 15;
     const indexOfLastVideogame = currentPage * videogamesPerPage; 
@@ -23,7 +23,7 @@ export default function Home() {
       setCurrentPage(pageN);
     };
 
-    useEffect(() => { //es como el componentDidMount del componente de clases
+    useEffect(() => { 
         setCurrentPage(1);
     }, [dispatch]); 
 
@@ -42,6 +42,8 @@ export default function Home() {
         setCurrentPage(prevPage);
     }
 
+    
+    //Relaciono la renderización de las cards con el paginado:
     const showCards = (videogames) => {
         const currentVideogames = videogames.slice(indexOfFirstVideogame,indexOfLastVideogame);
         return (
