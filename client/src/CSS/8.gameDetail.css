@@ -35,7 +35,8 @@
         padding: 10px;
         box-shadow: 5px 5px 10px 3px  #37FF8B;
         font-family: inherit;
-        margin-top: 40px;
+        font-weight: bolder;
+        margin-top: 55px;
         position: fixed;
         margin-left: 300px;
         cursor: pointer;

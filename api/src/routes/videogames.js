@@ -74,13 +74,11 @@ router.get("/", async (req, res, next) => {
             const containsName = allVideogames.filter((g) =>
                 g.name.toLowerCase().includes(search.toLowerCase())
             );
-            if (containsName.length) {
-                return res.send(containsName);
-            } else {
-                return res.send({ error: `We couldn't find a videogame matching your search`});
-            }
+            containsName.length
+                ? res.status(200).send(containsName)
+                : res.send([])
         } else {
-            res.send(allVideogames);
+            res.status(200).send(allVideogames);
         }
     } catch (error) {
         next(error);

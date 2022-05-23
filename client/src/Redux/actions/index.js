@@ -28,7 +28,6 @@ export function getVideogame(game) {
                     payload: json.data 
             });
         } catch (error) {
-            console.log(error);
             return dispatch({ 
                 type: "GET_VIDEOGAME", 
                 payload: []

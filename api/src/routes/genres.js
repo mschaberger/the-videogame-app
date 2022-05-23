@@ -20,7 +20,7 @@ router.get("/", async (req, res, next) => {
             });
         });
         const genresDB = await Genre.findAll(); //metodo de sequelize trae los generos de la base de datos
-        res.json(genresDB);
+        res.status(200).json(genresDB);
     } catch (error) {
         next(error);
     }

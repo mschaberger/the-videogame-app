@@ -35,7 +35,7 @@
             text-shadow: 0 0 .5em var(--glow-color);
             position: relative;
             transition: all 0.3s;
-            margin-top: 50px;
+            margin-top: 45px;
         }
            
         .createVG::after {
@@ -85,6 +85,7 @@
             color: rgb(249, 206, 255);
             padding: 7px;
             font-family: inherit;
+            cursor: pointer;
         }
             .options{
                 background-color: rgba(255, 0, 255, 0.297);

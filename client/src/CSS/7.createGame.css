@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
 
 .fondoCreate {
-    background-color: rgba(5, 25, 50, 0.518);
+    background-color: rgba(5, 25, 50, 0.78);
     margin: 30px 100px 30px 100px;
 }
 
@@ -34,6 +34,7 @@
                 box-shadow: 5px 5px 10px 3px  #37FF8B;
                 border: none;
                 font-family: inherit;
+                font-weight: bolder;
             }
             .botonHome:hover {
                 box-shadow: 5px 5px 10px 5px black;
@@ -53,7 +54,7 @@
             color: white;
             font-weight: bold;
             flex-direction: row;
-            margin: 30px;
+            margin: 33px;
             justify-items:stretch;
             text-align:justify;
             margin-left: 400px;
@@ -61,23 +62,23 @@
 
         .label {
             font-weight: bold;
-            font-size: 18px;
+            font-size: 20px;
             width: 300px;
             padding-right: 20px;
             text-align:start;
         }
 
         .inputCreate {
-            margin-left: 30px;
             border-radius: 5px;
-            border-width: 3px;
-            border-color: rgba(64, 224, 208, 0.395);
-            background-color: rgba(64, 224, 208, 0.256);
-            color: white;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom-width: 3px;
+            border-bottom-color: rgba(64, 224, 208, 0.569);
+            background-color: transparent;
+            color: rgb(184, 178, 178);
             padding: 5px;
             cursor: pointer;
-            text-align: center;
-            align-items:flex-end;
             font-size: 18px;
             width: 250px;
         }

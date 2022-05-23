@@ -210,9 +210,9 @@ export default function CreateGame() {
                     />
                 </div>
 
-                <button data-text="Awesome" class="button">
-                    <span class="actual-text">&nbsp;CREATE&nbsp;</span>
-                    <span class="hover-text" aria-hidden="true">&nbsp;CREATE&nbsp;</span>
+                <button data-text="Awesome" className="button">
+                    <span className="actual-text">&nbsp;CREATE&nbsp;</span>
+                    <span className="hover-text" aria-hidden="true">&nbsp;CREATE&nbsp;</span>
                 </button>
 
             </form>

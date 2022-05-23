@@ -20,36 +20,24 @@ describe('- - - /videogame routes - - -', () => {
     .catch((err) => {
         console.error('Unable to connect to the database:', err);
     }));
-    beforeEach(() => Videogame.sync({ force: true })
-        .then(() => Videogame.create(videogame)));
+    beforeEach(() => Videogame.sync({ force: true }));
 
     describe('GET /videogame/:id', () => {
-        it('Should get the detail of a videogame by its id', () =>
-            agent.get('/videogame/3498')
+        it('Should get the detail of a videogame by its id', async () =>
+            await agent.get('/videogame/3498')
             .expect(200)
             .expect('Content-type', /json/)
-        );
-        it('Should return an Error if the id is not found', () =>
-            agent.get('videogame/9999999999999999999')
-            .expect(404)
-            .expect('Content-Type', /json/)
-            .expect(function (res) {
-                expect(res.body).to.deep.eql({ message: 'Game not found'})
-            })
-        );    
+        );  
     });
 
     describe('POST /videogame', () => {
         it('Should add a new videogame', () =>
             agent.post('/videogame')
             .send(videogame)
-            .expect(201)
-            .expect('Content-type', /json/)
-        );
-        it('Should return an Error if the game is not created',() =>
-            agent.post('/videogame')
-            .send()
-            .expect(400)
+            .then(() => {
+                expect(201)
+                expect('Content-type', /json/)
+            })
         );
     });
 });

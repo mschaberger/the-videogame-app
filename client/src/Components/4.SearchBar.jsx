@@ -19,15 +19,18 @@ export class SearchBar extends React.Component {
         });
     }
     
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
         if (!this.state.game.trim()) {
             return alert("Please insert a videogame name");
         } else {
-            this.props.getVideogame(this.state.game);
+            await this.props.getVideogame(this.state.game);
             this.setState({
                 game: ''
             })
+            if (this.props.videogames.length === 0) {
+                return alert("We do not have a game with that name, LET'S CREATE ONE!")
+            }
         }
     };
     
@@ -44,7 +47,6 @@ export class SearchBar extends React.Component {
                     value={game}
                     onChange = {e => this.handleInputChange(e)}
                     onSubmit = {e => this.handleSubmit(e)}
-                    on
                 />
                 <button
                     className='buttonSearch'
