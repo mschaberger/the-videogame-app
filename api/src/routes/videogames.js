@@ -24,7 +24,7 @@ const getfromApi = async () => {
                     platforms: e.platforms?.map((el) => el.platform.name), //platforms es una array de objetos, que tienen una prop platform que tmb es un objeto, las plataformas se obtienen de platform.name
                 });
             });
-            apiUrl = pages.data.next; //para 'pasar' a la siguiente pagina de la url
+            apiUrl = pages.data.next; //para 'pasar' a la siguiente pagina de la api
         }
         return arrVideogames;
     } catch (error) {
@@ -63,9 +63,8 @@ const getAllVideogames = async () => {
     return allData;
 };
 
-//Tomo el name de la query si me lo pasan lo comparo con todos mis datos (de la BD+API),
-//devuelvo los primeros 15 VG que matchean con ese name.
-//Si no me pasan el name por query, traigo todos los videojuegos:
+//Si existe, toma el name de la query y lo busca,
+//Si no me pasan el name, trae todos los videojuegos:
 router.get("/", async (req, res, next) => {
     try {
         const { search } = req.query;
