@@ -8,9 +8,9 @@ const videogamesRouter = require('./videogames.js');
 const router = Router();
 
 // Configurar los routers, middlewares para crear las rutas:
-router.use('/genres', genresRouter);
-router.use('/videogame', videogameRouter);
-router.use('/videogames', videogamesRouter);
+router.use('/api/genres', genresRouter);
+router.use('/api/videogame', videogameRouter);
+router.use('/api/videogames', videogamesRouter);
 
 
 module.exports = router;
