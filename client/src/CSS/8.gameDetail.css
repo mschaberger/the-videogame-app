@@ -38,7 +38,7 @@
         font-weight: bolder;
         margin-top: 55px;
         position: fixed;
-        margin-left: 300px;
+        margin-left: 260px;
         cursor: pointer;
     }
 
@@ -77,4 +77,5 @@
             border-style: double;
             border-color: black;
             border-radius: 15px;
+            box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.909);
         }

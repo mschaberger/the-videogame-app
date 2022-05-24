@@ -1,9 +1,6 @@
-//se definen todas las actions (filtrar, ordenar, pedir todos los vg, pedir detalles de un VG, postear un nuevo vg)
-//cada action devuelve un objeto
-//con promesas no necesito el async await:
 import axios from "axios";
 
-//SON TODAS ACTION CREATORS, las que hacen pedidos al back, son las que usan thunk.
+//SON TODAS ACTION CREATORS(funciones), que devuelven acciones(objetos): 
 
 export function getAllVideogames() {
     return async function (dispatch) {
@@ -36,7 +33,6 @@ export function getVideogame(game) {
     };
 };
 
-//PROMESAAAAAAA:
 export function getVideogameDetail(id) {
     return (dispatch) => { 
         axios.get(`/videogame/${id}`)
@@ -56,7 +52,6 @@ export function cleanDetail() {
     };
 };
 
-//PROMESAAAAA:
 export function getGenres() {
     return (dispatch) => {
         axios.get('/genres')

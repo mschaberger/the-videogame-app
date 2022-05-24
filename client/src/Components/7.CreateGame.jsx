@@ -173,7 +173,7 @@ export default function CreateGame() {
                             {input.genres.map((e) => (
                                 <div className="divGP" key={e}>
                                     {e + " "}
-                                    <button className='buttonDelete' type="button" onClick={() => handleDeleteGenres(e)}> X </button>
+                                    <button className='buttonDelete' type="button" onClick={() => handleDeleteGenres(e)}> x </button>
                                 </div>
                             ))}
                         </li>
@@ -192,7 +192,7 @@ export default function CreateGame() {
                             <li key={e} className="listaGP">
                                 <div className="divGP">
                                     {e + " "}
-                                    <button className='buttonDelete' type="button" onClick={() => handleDeletePlatforms(e)}> X </button>
+                                    <button className='buttonDelete' type="button" onClick={() => handleDeletePlatforms(e)}> x </button>
                                 </div>
                             </li>
                         ))}

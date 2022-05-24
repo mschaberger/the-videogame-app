@@ -67,7 +67,7 @@ export default function NavBar() {
 
                 <select className='filter' defaultValue='Origin' onChange={(e) => handleFilterDate(e)}>
                     <option className='options' disabled> Filter by Origin</option>
-                    <option className='options' value='All'> All origins </option>
+                    <option className='options' value='All'> Filter by Origin </option>
                     <option className='options' value='created'> Created by user </option>
                     <option className='options' value='api'> From API </option>
                 </select>

@@ -1,6 +1,3 @@
-//[ ] Alguna imagen de fondo representativa al proyecto
-//[ ] Botón para ingresar al home (Ruta principal)
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../CSS/1.landingPage.css';

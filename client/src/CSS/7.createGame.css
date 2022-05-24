@@ -2,7 +2,7 @@
 
 .fondoCreate {
     background-color: rgba(5, 25, 50, 0.78);
-    margin: 30px 100px 30px 100px;
+    margin: 20px 150px 20px 150px;
 }
 
     .contenedorCreate{
@@ -13,14 +13,14 @@
         .headerCreate{
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-evenly;
             margin-top: 30px;
+            margin-bottom: 30px;
         }
 
             .tituloCreate {
                 color: white;
                 font-family: 'Press Start 2P', cursive;
-                margin-left: 18%;
             }
 
             .botonHome{
@@ -29,8 +29,7 @@
                 color:  #37FF8B;
                 cursor: pointer;
                 padding: 10px;
-                margin-right: -10px;
-                margin-top: 20px;
+                margin-top: 18px;
                 box-shadow: 5px 5px 10px 3px  #37FF8B;
                 border: none;
                 font-family: inherit;
@@ -44,27 +43,29 @@
             }
 
     .formulario{
+        display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
         margin: 10px;
-        justify-content: flex-start;
+        height: 600px;
     }
 
         .item {
             color: white;
             font-weight: bold;
             flex-direction: row;
-            margin: 33px;
-            justify-items:stretch;
-            text-align:justify;
-            margin-left: 400px;
+            width: 30%;
+            margin-bottom: 60px;
+            margin-top: 20px;
         }
 
         .label {
+            display: flex;
+            flex: 1;
             font-weight: bold;
             font-size: 20px;
-            width: 300px;
-            padding-right: 20px;
             text-align:start;
         }
 
@@ -83,12 +84,17 @@
             width: 250px;
         }
 
+        .ul {
+            list-style: none;
+        }
+
         .buttonDelete {
             background: transparent;
             border-color: rgba(255, 0, 255, 0.653);
             color: rgba(209, 99, 209, 0.907);
             font-weight: bolder;
             cursor: pointer;
+            justify-content: center;
             border-radius: 5px;
             border: none;
         }
@@ -105,8 +111,7 @@
             border: none;
             font-family: 'Press Start 2P', cursive;
             cursor: pointer;
-        }
-          
+        } 
         .button {
             --border-right: 6px;
             --text-stroke-color: rgba(255,255,255,0.6);
@@ -121,7 +126,6 @@
             color: transparent;
             -webkit-text-stroke: 1px var(--text-stroke-color);
         }
-
         .hover-text {
             position: absolute;
             box-sizing: border-box;
@@ -134,7 +138,6 @@
             transition: 0.5s;
             -webkit-text-stroke: 1px var(--animation-color);
         }
-
         .button:hover .hover-text {
             width: 100%;
             filter: drop-shadow(0 0 23px var(--animation-color))
