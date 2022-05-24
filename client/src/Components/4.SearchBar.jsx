@@ -24,7 +24,7 @@ export class SearchBar extends React.Component {
         if (!this.state.game.trim()) {
             return alert("Please insert a videogame name");
         } else {
-            await this.props.getVideogame(this.state.game);
+            await this.props.getVideogame(this.state.game.trim());
             this.setState({
                 game: ''
             })

@@ -85,15 +85,15 @@
 
         .buttonDelete {
             background: transparent;
-            border-color: fuchsia;
-            color: fuchsia;
+            border-color: rgba(255, 0, 255, 0.653);
+            color: rgba(209, 99, 209, 0.907);
             font-weight: bolder;
             cursor: pointer;
             border-radius: 5px;
             border: none;
         }
         .buttonDelete:hover {
-            background-color: fuchsia;
+            background-color: rgba(255, 0, 255, 0.546);
             color: white;
             border: none;
         }
@@ -104,6 +104,7 @@
             padding: 0;
             border: none;
             font-family: 'Press Start 2P', cursive;
+            cursor: pointer;
         }
           
         .button {
