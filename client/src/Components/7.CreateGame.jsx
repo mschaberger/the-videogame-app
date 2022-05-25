@@ -12,7 +12,7 @@ export default function CreateGame() {
     const videogames = useSelector((state) => state.videogames);
     const platforms = useSelector((state) => state.platforms);
 
-    const [input, setInput] = useState({ //estado inicial:
+    const [input, setInput] = useState({ 
         name: "",
         image: "",
         description: "",

@@ -10,8 +10,8 @@ import '../CSS/2.home.css';
 
 export default function Home() {
     const dispatch = useDispatch();
-    const allVideogames = useSelector((state) => state.allVideogames); //trae del state todo lo que esta en el array videogames
-    const videogames = useSelector((state) => state.videogames); //trae del state todo lo que esta en el array videogame
+    const allVideogames = useSelector((state) => state.allVideogames); 
+    const videogames = useSelector((state) => state.videogames); 
 
     //Paginado, numeración y prev-next
     const [currentPage, setCurrentPage] = useState(1);

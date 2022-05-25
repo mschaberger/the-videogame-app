@@ -11,11 +11,6 @@ dotenv.config();
 
 axios.defaults.baseURL = process.env.REACT_APP_API || 'http://localhost:3001';
 
-//le indicamos al REACTDOM que queremos que renderice(APP) y en donde(en ROOT del html de public)
-//el provider lo importamos y lo ponemos para que 'envuelva' toda la app, 
-//permite que todos los componentes de la app tengan acceso al store de redux
-
-
 ReactDOM.render(
     <Provider store={store}> 
         <React.StrictMode>

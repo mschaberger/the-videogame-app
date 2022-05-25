@@ -73,47 +73,5 @@ export const mapDispatchToProps = (dispatch) => {
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
 
 
-/*
-export default function SearchBar() {
-    const dispatch = useDispatch(); 
-    const [game, setGame] = useState(''); 
-
-    function handleInputChange(e) {
-        e.preventDefault();
-        setGame(e.target.value);
-    }
-    
-    function handleSubmit(e) {
-        e.preventDefault();
-        if (!game.trim()) {
-            return alert("Please insert a videogame name");
-        } else {
-            dispatch(getVideogame(game));
-            setGame("");
-        }
-    }
-
-    return (
-        <div>
-            <input
-                className='inputSearch'
-                type="text"
-                id = 'search'
-                placeholder="Search a game..."
-                value={game}
-                onChange = {e => handleInputChange(e)}
-                onClick = {e => handleSubmit(e)}
-            />
-
-            <button
-            className='buttonSearch'
-            type='submit'
-            onClick = {e => handleSubmit(e)}
-            > SEARCH </button>
-        </div>
-    );
-}
-*/
-
 
 
