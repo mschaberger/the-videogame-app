@@ -1,4 +1,3 @@
-//siempre se define un estado inicial:
 const initialState = {
     videogames: [],
     allVideogames: [],
@@ -7,7 +6,7 @@ const initialState = {
     platforms: [],
 };
 
-//se crea una funcion reducer con un switch para recorrer todas las actions hasta que encuentra la solicitada y la ejecuta
+
 function reducer(state = initialState, action) {
     switch (action.type) {
         
@@ -21,8 +20,6 @@ function reducer(state = initialState, action) {
                 videogames: action.payload,
                 allVideogames: action.payload,
                 platforms: Array.from(new Set(platforms)),
-                //El método Array.from() crea un Array a partir del objeto Set(para que no se repitan) de las plataformas.  
-                //El objeto Set permite almacenar valores únicos de cualquier tipo. Un valor en un Set sólo puede estar una vez.
             };
 
         case "GET_VIDEOGAME":

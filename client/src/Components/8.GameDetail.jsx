@@ -29,10 +29,17 @@ export default function GameDetail() {
                 <div className="titleDetail">
                     <h2 className='gameNameDetail'> { theVideogame.name } </h2> 
                     <h3 className='rating'> Rating: { theVideogame.rating } ☆ </h3>
+                    <br></br>
+                    <a href={theVideogame.website} className='website'> CHECK THE OFFICIAL WEBSITE!</a>
                 </div>
 
                 <Link to= {`/home`} >
-                    <button className='homeDetailBtn'> HOME </button>
+                    <button className="homeDetailBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> HOME
+                    </button>
                 </Link>
             </div>
 

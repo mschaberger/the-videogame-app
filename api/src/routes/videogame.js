@@ -36,6 +36,7 @@ router.get('/:id', async (req, res, next) => {
                 released: game.released,
                 genres: game.genres,
                 platforms: game.platforms.map((p) => p.platform.name).join(', '),
+                website: game.website,
             }
         } catch (error) {
             next(error);

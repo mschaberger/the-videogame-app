@@ -11,6 +11,7 @@ export default function CreateGame() {
     const genres = useSelector((state) => state.genres);
     const videogames = useSelector((state) => state.videogames);
     const platforms = useSelector((state) => state.platforms);
+    const [error, setError] = useState('')
 
     const [input, setInput] = useState({ 
         name: "",
@@ -22,7 +23,13 @@ export default function CreateGame() {
         platforms: [],
     });
 
+
     function handleChange(e) {
+        if(e.target.name === 'rating') {
+            if(0 < e.target.value || e.target.value > 5) {
+                setError('El rating solo puede estar entre 1 y 5')
+            }
+        }
         setInput({
         ...input,
         [e.target.name]: e.target.value,
@@ -46,6 +53,8 @@ export default function CreateGame() {
             : [...input.platforms, e.target.value],
         });
     };
+
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -110,7 +119,12 @@ export default function CreateGame() {
                 <h1 className="tituloCreate"> LET`S CREATE YOUR GAME! </h1>
                 <div>
                     <Link to="/home">
-                        <button className="botonHome"> HOME </button>
+                    <button className="botonHome">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> HOME
+                    </button>
                     </Link>
                 </div>
             </div>
@@ -148,6 +162,7 @@ export default function CreateGame() {
                         name="rating"
                         onChange={(e) => handleChange(e)}
                     />
+                    {error? <p className="error"> {error} </p> : null}
                 </div>
 
                 <div className="item">

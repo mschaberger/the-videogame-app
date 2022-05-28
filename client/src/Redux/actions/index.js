@@ -1,7 +1,5 @@
 import axios from "axios";
 
-//SON TODAS ACTION CREATORS(funciones), que devuelven acciones(objetos): 
-
 export function getAllVideogames() {
     return async function (dispatch) {
         try {
