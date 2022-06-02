@@ -166,7 +166,8 @@
         }
 
         .error {
-            color: red;
+            color: rgb(184, 30, 30);
+            font-family: inherit;
         }
 
         .ul {
@@ -226,4 +227,14 @@
         .button:hover .hover-text {
             width: 100%;
             filter: drop-shadow(0 0 23px var(--animation-color))
+        }
+
+        .sweet-warning {
+            background-color: rgba(112, 126, 172, 0.901);
+            border-radius: 15px;
+        }
+        
+        .sweet-button {
+            background-color: rgba(50, 95, 187, 0.966);
+            border: none;
         }

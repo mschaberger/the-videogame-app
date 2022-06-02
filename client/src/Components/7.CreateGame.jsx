@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { postVideogame, getGenres, getAllVideogames } from "../Redux/actions/index.js";
 import { Link } from "react-router-dom";
+import { validate } from "./10.Errors.jsx";
 import defaultImage from '../CSS/imagenes/Nuevojuego.webp';
+import swal from 'sweetalert';
 import "../CSS/7.createGame.css";
 
 export default function CreateGame() {
@@ -11,7 +13,6 @@ export default function CreateGame() {
     const genres = useSelector((state) => state.genres);
     const videogames = useSelector((state) => state.videogames);
     const platforms = useSelector((state) => state.platforms);
-    const [error, setError] = useState('')
 
     const [input, setInput] = useState({ 
         name: "",
@@ -22,18 +23,15 @@ export default function CreateGame() {
         genres: [],
         platforms: [],
     });
+    const [errors, setErrors] = useState(validate(input));
 
 
     function handleChange(e) {
-        if(e.target.name === 'rating') {
-            if(0 < e.target.value || e.target.value > 5) {
-                setError('El rating solo puede estar entre 1 y 5')
-            }
-        }
         setInput({
         ...input,
         [e.target.name]: e.target.value,
         });
+        setErrors(validate({...input, [e.target.name]: e.target.value}));
     };
 
     function handleSelectGenres(e) {
@@ -59,25 +57,65 @@ export default function CreateGame() {
     function handleSubmit(e) {
         e.preventDefault();
         if (!input.name.trim()) {
-            return alert("ERROR: Your game needs a name!");
+            swal({
+                className: 'sweet-warning',
+                text: "Your game needs a name!",
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if ( videogames.find( (e) => e.name.toLowerCase().trim() === input.name.toLowerCase().trim())) {
-            return alert(`SAD: The name ${input.name} already exist, please choose another one!`);
+            swal({
+                className: 'sweet-warning',
+                text: `The name ${input.name} already exist, please choose another one!`,
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if (input.description.trim() === "") {
-            return alert("ERROR: Your name needs a description!");
+            swal({
+                className: 'sweet-warning',
+                text: "Your name needs a description!",
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if (input.released.trim() === "") {
-            return alert("ERROR: Please tell me the release date!");
+            swal({
+                className: 'sweet-warning',
+                text: "Please tell me the release date!",
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if (input.rating.trim() === "" || input.rating < 1 || input.rating > 5) {
-            return alert("OOPS! The rating must be between 1 and 5");
+            swal({
+                className: 'sweet-warning',
+                text: "OOPS! The rating must be between 1 and 5",
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if (input.genres.length === 0) {
-            return alert("Please select one or more genres for your game");
+            swal({
+                className: 'sweet-warning',
+                text: "Please select one or more genres for your game",
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if (input.platforms.length === 0) {
-            return alert("Please select one or more platforms for your game");
+            swal({
+                className: 'sweet-warning',
+                text: "Please select one or more platforms for your game",
+                icon: "error",
+                button: {text:'OK',className:'sweet-button'},
+            });
         } else if (input.image.trim() === '') {
             input.image = defaultImage
         }
         else {
             dispatch(postVideogame(input));
-            alert("CONGRATULATIONS! You created a new game!");
+            swal({
+                className: 'sweet-warning',
+                title: 'CONGRATULATIONS!',
+                text: "You created a new game!",
+                button: {text:'OK',className:'sweet-button'},
+            });
             setInput({ 
                 name: "",
                 image: "",
@@ -140,6 +178,8 @@ export default function CreateGame() {
                         name="name"
                         onChange={(e) => handleChange(e)}
                     />
+                    <br></br>
+                    {errors.name && ( <span className='error'>{errors.name}</span>)} 
                 </div>
 
                 <div className="item">
@@ -151,6 +191,8 @@ export default function CreateGame() {
                         name="released"
                         onChange={(e) => handleChange(e)}
                     />
+                    <br></br>
+                    {errors.released && ( <spantrue className='error'>{errors.released}</spantrue>)}
                 </div>
 
                 <div className="item">
@@ -162,7 +204,8 @@ export default function CreateGame() {
                         name="rating"
                         onChange={(e) => handleChange(e)}
                     />
-                    {error? <p className="error"> {error} </p> : null}
+                    <br></br>
+                    {errors.rating && ( <spantrue className='error'>{errors.rating}</spantrue>)}
                 </div>
 
                 <div className="item">
@@ -182,6 +225,8 @@ export default function CreateGame() {
                         <option disabled>Select</option>
                         {genres?.map((e) => (<option className="select" value={e.name} key={e.id}> {e.name} </option>))}
                     </select>
+                    <br></br>
+                    {errors.genres && ( <spantrue className='error'>{errors.genres}</spantrue>)}
 
                     <ul className="ul">
                         <li className="listaGP">
@@ -201,6 +246,8 @@ export default function CreateGame() {
                         <option disabled>Select</option>
                         {platforms?.map((e) => (<option className="select" value={e} key={e}> {e} </option>))}
                     </select>
+                    <br></br>
+                    {errors.platforms && ( <spantrue className='error'>{errors.platforms}</spantrue>)}
 
                     <ul className="ul">
                         {input.platforms.map((e) => (
@@ -223,6 +270,9 @@ export default function CreateGame() {
                         name="description"
                         onChange={(e) => handleChange(e)}
                     />
+                    <br></br>
+                    {errors.description && ( <spantrue className='error'>{errors.description}</spantrue>)}
+
                 </div>
 
                 <button data-text="Awesome" className="button">

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
 import NavBar from './3.NavBar.jsx';
 import GameCard from './5.GameCard.jsx'
 import Pages from './6.Pages.jsx';
@@ -32,13 +33,27 @@ export default function Home() {
         const nextPage = currentPage + 1;
         console.log(totalVideogames)
         console.log(indexOfLastVideogame)
-        if (indexOfLastVideogame >= totalVideogames) return alert('OOPS this is the last page!');
+        if (indexOfLastVideogame >= totalVideogames) {
+            swal({
+                className: 'sweet-warning',
+                title: 'OOPS this is the last page!',
+                icon: "warning",
+                button: {text:'OK',className:'sweet-button'},
+            });
+        }
         setCurrentPage(nextPage);
     }
 
     const handlePrev = () => {
         const prevPage = currentPage - 1;
-        if (prevPage <= 0) return alert('OOPS this is the first page!');
+        if (prevPage <= 0) {
+            swal({
+                className: 'sweet-warning',
+                title: 'OOPS this is the first page!',
+                icon: "warning",
+                button: {text:'OK',className:'sweet-button'},
+            });
+        }
         setCurrentPage(prevPage);
     }
 

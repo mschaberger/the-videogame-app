@@ -1,6 +1,7 @@
 import React from 'react';
 import { getVideogame } from '../Redux/actions/index.js';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 import '../CSS/4.searchBar.css';
 
 
@@ -22,15 +23,25 @@ export class SearchBar extends React.Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         if (!this.state.game.trim()) {
-            return alert("Please insert a videogame name");
+            swal({
+                className: 'sweet-warning',
+                text: "Please insert a videogame name",
+                icon: "error",
+                button: "OK",
+            });
         } else {
             await this.props.getVideogame(this.state.game.trim());
             this.setState({
                 game: ''
             })
             if (this.props.videogames.length === 0) {
-                return alert("We do not have a game with that name, LET'S CREATE ONE!")
-            }
+                swal({
+                    className: 'sweet-warning',
+                    title: "We do not have a game with that name, LET'S CREATE ONE!",
+                    icon: "error",
+                    button: {text:'OK',className:'sweet-button'},
+                });
+            } 
         }
     };
     
