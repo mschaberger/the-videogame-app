@@ -10,7 +10,9 @@ The app allows you to search by name, filter by gender and origin, and sort by a
 By clicking each videogame, you can see more information and a link that redirects you to the official page.
 
 It also gives the user the possibility to create their own videogame through a controlled form.
- 
+
+If you want to try it, download the repository and run the commands "npm install" and then "npm start".
+
  
 🚀 Used technologies:
 JavaScript | React | Redux | CSS | Node | Express | Sequelize | PostgreSQL
