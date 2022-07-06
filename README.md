@@ -11,7 +11,8 @@ By clicking each videogame, you can see more information and a link that redirec
 
 It also gives the user the possibility to create their own videogame through a controlled form.
 
-If you want to try it, download the repository and run the commands "npm install" and then "npm start".
+If you want to try it, download the repository and run the commands "npm install" and then "npm start", OR
+⚡ CHECK IT OUT: https://the-videogame-app.vercel.app/
 
  
 🚀 Used technologies:
